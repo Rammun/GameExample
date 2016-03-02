@@ -1,0 +1,108 @@
+﻿@model WebSignalR.Models.UserBattlesViewModel
+
+<p>Битва началась!</p>
+
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+
+            // Ссылка на автоматически-сгенерированный прокси хаба
+            var chat = $.connection.customHub;
+            chat.server.connect(@User.Identity.Name);
+
+            // Объявление функции, которая хаб вызывает при получении сообщений
+            chat.client.addHit = function (userParam1, userParam2) {
+                // Добавление сообщений на веб-страницу
+                $('#hp1').val(userParam1.HP);
+                $('#hp2').val(userParam2.HP);
+                $('#mp1').val(userParam1.MP);
+                $('#mp2').val(userParam2.MP);
+            };
+
+            // Функция, вызываемая при подключении нового пользователя
+            chat.client.onConnected = function (id, userName, allUsers) {
+
+                // Добавление всех пользователей
+                for (i = 0; i < allUsers.length; i++) {
+                    AddUser(allUsers[i].ConnectionId, allUsers[i].Name);
+                }
+            }
+
+            // Добавляем нового пользователя
+            chat.client.onNewUserConnected = function (id, name) {
+
+                AddUser(id, name);
+            }
+
+            // Удаляем пользователя
+            chat.client.onUserDisconnected = function (id, userName) {
+
+                $('#' + id).remove();
+            }
+
+            // Открываем соединение
+            $.connection.hub.start().done(function () {
+
+                $('#btHit').click(function () {
+                    chat.server.send("Hit");
+                });
+
+                $('#btMagic').click(function () {
+                    chat.server.send("Magic");
+                });
+
+                //// обработка логина
+                //$("#btnLogin").click(function () {
+
+                //    var name = $("#txtUserName").val();
+                //    if (name.length > 0) {
+                //        chat.server.connect(name);
+                //    }
+                //    else {
+                //        alert("Введите имя");
+                //    }
+                //});
+            });
+        });
+        // Кодирование тегов
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+        //Добавление нового пользователя
+        function AddUser(id, name) {
+
+            var userId = $('#users').val();
+            if (userId != id) {
+
+                $("#chatusers ul").append('<li id="' + id + '" class="user" >' + name + '</li>');
+            }
+        }
+    </script>
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+        @Html.DropDownListFor(m => m.UserParam2.Name, new List<SelectListItem>(), "-выберите игрока-", new { id = "users" })
+        <button id="selectUser">Выбрать</button>
+    </div>
+
+    <div id="user1">
+        <text id="name1">@Model.UserParam1.Name</text>
+        <text id="hp1">HP=@Model.UserParam1.HP</text>
+        <text id="mp1">MP=@Model.UserParam1.MP</text>
+    </div>
+
+    <div id="user2">
+        <text id="name2">@Model.UserParam2.Name</text>
+        <text id="hp2">HP=@Model.UserParam2.HP</text>
+        <text id="mp2">MP=@Model.UserParam2.MP</text>
+    </div>
+
+    <button id="btHit">Удар</button>
+    <button id="btMagic">Магия</button>
+</div>
+
