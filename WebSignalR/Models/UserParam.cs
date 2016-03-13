@@ -11,6 +11,8 @@ namespace WebSignalR.Models
         public string Name;
         public int HP = 1000;
         public int MP = 2000;
+        public bool Busy = false;
+
         public Dictionary<string, int[]> skills;
 
         public UserParam()

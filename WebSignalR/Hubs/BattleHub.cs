@@ -48,9 +48,9 @@ namespace WebSignalR.Hubs
             }
         }
 
-        public void SendUser(UserParam user1, UserParam user2)
+        public void InviteUser(string user1Name, string user2Id)
         {
-            Clients.Client(user2.Id).inviteUser(user1);
+            Clients.Client(user2Id).inviteUser(Users.FirstOrDefault(u => u.Name == user1Name));
         }
 
         public override Task OnConnected()
