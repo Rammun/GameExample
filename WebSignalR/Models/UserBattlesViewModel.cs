@@ -9,6 +9,7 @@ namespace WebSignalR.Models
     {
         public UserParam UserParam1 { get; set; }
         public UserParam UserParam2 { get; set; }
+        public UserParam SelectUser { get; set; }
         public List<UserParam> Users { get; set; }
     }
 }

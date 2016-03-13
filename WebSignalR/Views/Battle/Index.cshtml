@@ -1,0 +1,120 @@
+﻿@model WebSignalR.Models.UserBattlesViewModel
+
+@{
+    ViewBag.Title = "Battle";
+}
+
+<p>Выберите противника:</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <select id="users" size="10">
+            <option value="">пока никого нет</option>
+        </select>
+        <button id="selectUser">Выбрать</button>
+    </div>
+
+    <div id="user1">
+        <text id="name1">@Model.UserParam1.Name</text>
+        <text id="hp1">HP=@Model.UserParam1.HP</text>
+        <text id="mp1">MP=@Model.UserParam1.MP</text>
+    </div>
+
+    <div id="user2" hidden="hidden">
+        <text id="name2">@Model.UserParam2.Name</text>
+        <text id="hp2">HP=@Model.UserParam2.HP</text>
+        <text id="mp2">MP=@Model.UserParam2.MP</text>
+    </div>
+
+    <button id="btHit">Удар</button>
+    <button id="btMagic">Магия</button>
+</div>
+
+<div class="row" id="invite" hidden="hidden">
+    Вас приглашает на бой <text id="inviteUserName"></text>
+    <input type="button" id="inviteButton" value="Принять бой" />
+    <input type="button" id="renounButton" value="Отказаться" />
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script>
+        var selectUser = {};
+        var user1 = {};
+        var user2 = {};
+        user1.Id = '@Model.UserParam1.Id';
+        user1.Name = '@Model.UserParam1.Name';
+        
+
+    $(function () {
+        var chat = $.connection.battleHub;
+
+        loadClientMethods(chat);
+
+        $.connection.hub.start().done(function() {
+            loadEvents(chat);
+        });
+    });
+
+    function loadClientMethods(chat) {
+        chat.client.addHit = function (userParam1, userParam2) {
+            $('#hp1').val(userParam1.HP);
+            $('#hp2').val(userParam2.HP);
+            $('#mp1').val(userParam1.MP);
+            $('#mp2').val(userParam2.MP);
+        };
+
+        chat.client.onConnected = function (id, userName, allUsers) {
+            for (i = 0; i < allUsers.length; i++) {
+                AddUser(allUsers[i].Id, allUsers[i].Name);
+            }
+        }
+
+        chat.client.onNewUserConnected = function (id, name) {
+            AddUser(id, name);
+        }
+
+        chat.client.onUserDisconnected = function (id) {
+            $('#' + id).remove();
+        }
+
+        chat.client.inviteUser = function (user) { alert(user.Id + " " + user.Name);
+            $('#invite').removeAttr('hidden');
+            @Model.UserParam2 = user;
+            $('#inviteUserName').val(user.Name);
+        }
+    }
+
+    function loadEvents(chat) {
+        $('#btHit').click(function () {
+            chat.server.addHit(@Model.UserParam1, @Model.UserParam2, "Hit");
+        });
+
+        $('#btMagic').click(function () {
+            chat.server.addHit(@Model.UserParam1, @Model.UserParam2, "Magic");
+            });
+
+        $('#selectUser').click(function () { alert(@Model.UserParam1 + ' ' + @Model.UserParam2);
+                chat.server.sendUser(@Model.UserParam1, @Model.UserParam2);
+        });
+    }
+
+    @*Кодирование тегов*@
+    function htmlEncode(value) {
+        var encodedValue = $('<div />').text(value).html();
+        return encodedValue;
+    }
+
+    function AddUser(id, name) {
+        var users = $('#users').append('<option value=' + id + ' id="' + id + '">' + name + '</option>');
+    }
+
+    $("#users").change(function () {
+        selectUser = $(this).val();
+    });
+
+    </script>
+}
+

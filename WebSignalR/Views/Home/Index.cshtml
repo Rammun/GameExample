@@ -1,5 +1,4 @@
-﻿@using WebSignalR.Models 
-
+﻿
 @{
     ViewBag.Title = "Home Page";
 }
@@ -12,14 +11,8 @@
 
 <div class="row">
     @if(User.Identity.IsAuthenticated)
-    {        
-        // Частичное представление с битвой
-        @Html.Partial("_BattlePartial", new UserBattlesViewModel
-        {
-            UserParam1 = new UserParam{ Name = User.Identity.Name },
-            UserParam2 = new UserParam(),
-            Users = new List<UserParam>()
-        })
+    {
+        @Html.ActionLink("Начать бой!", "Index", "Battle");        
     }
     else
     {
