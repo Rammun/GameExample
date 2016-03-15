@@ -50,7 +50,40 @@ namespace WebSignalR.Hubs
 
         public void InviteUser(string user1Name, string user2Id)
         {
-            Clients.Client(user2Id).inviteUser(Users.FirstOrDefault(u => u.Name == user1Name));
+            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+
+            if(!user1.Busy && !user2.Busy)
+            {
+                Clients.Client(user2Id).inviteUser(user1);
+
+                user1.Busy = true;
+                user2.Busy = true;
+            }
+        }
+
+        public void AcceptAnswer(string user1Name, string user2Id)
+        {
+            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+
+
+        }
+
+        public void Renouncement(string user1Name, string user2Id)
+        {
+            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+
+            user1.Busy = false;
+            user2.Busy = false;
+
+            Clients.Client(user2Id).renounAnswer();
+        }
+
+        public void CanselRequest(string user1Name, string user2Id)
+        {
+
         }
 
         public override Task OnConnected()

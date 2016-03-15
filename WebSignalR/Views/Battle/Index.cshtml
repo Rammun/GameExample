@@ -30,15 +30,15 @@
     <button id="btMagic">Магия</button>
 </div>
 
-<div class="row" id="invite2" hidden="hidden">
-    Вас приглашает на бой <span id="inviteUser2Name">0</span>
-    <button id="inviteButton">Принять бой</button>
-    <button id="renoun2Button">Отменить</button>
+<label id="message"></label>
+
+<div class="row" id="answerToBattle" hidden="hidden">
+    <button id="acceptButton">Принять бой</button>
+    <button id="renounAnswerButton">Отменить</button>
 </div>
 
-<div class="row" id="invite1" hidden="hidden">
-    Вы пригласили на бой <span id="inviteUser1Name">0</span>
-    <button id="renoun1Button">Отменить</button>
+<div class="row" id="requestToBattle" hidden="hidden">
+    <button id="canselRequestButton">Отменить</button>
 </div>
 
 @section scripts{
@@ -46,9 +46,9 @@
     <script src="~/signalr/hubs"></script>
 
     <script>
-        var selectUserId;
-        var user1 = {};
-        var user2 = {};        
+    var selectUserId;
+    var user1 = {};
+    var user2 = {};
 
     $(function () {
         var chat = $.connection.battleHub;
@@ -82,9 +82,9 @@
             $('#' + id).remove();
         }
 
-        chat.client.inviteUser = function (user) { alert('Invite ' + user.Name);
-            $('#invite2').removeAttr('hidden');
-            $('#inviteUser2Name').text(user.Name);
+        chat.client.inviteUser = function (user) {
+            $('#message').text('Вас приглашает на бой ' + user.Name);
+            $('#answerToBattle').removeAttr('hidden');
             user2 = user;
         }
     }
@@ -101,17 +101,29 @@
         $('#selectUser').click(function () {
             if(selectUserId == '') return;
 
-            chat.server.inviteUser('@User.Identity.Name', selectUserId); alert($('#users :selected').text());
-            $('#inviteUser1Name').text($('#users :selected').text());
-            $('#invite1').removeAttr('hidden');
+            $('#message').text('Вы пригласили на бой ' + $('#users :selected').text());
+            $('#requestToBattle').removeAttr('hidden');
+
+            chat.server.inviteUser('@User.Identity.Name', selectUserId);
         });
 
-        $('#inviteButton').click(function () {
+        $('#acceptButton').click(function () {
+            $('#invite').attr('hidden', 'hidden');
+            $('#message').text('Идет бой с ' + selectUserId);
 
+            chat.server.acceptAnswer('@User.Identity.Name', selectUserId);
         });
 
-        $('#renounButton').click(function () {
-            chat.server.renouncement
+        $('#renounAnswerButton').click(function () {
+            $('#message').text('Вы отказались от боя!')
+
+            chat.server.renounAnswer('@User.Identity.Name', selectUserId);
+        });
+
+        $('#canselRequestButton').click(function () {
+            $('#message').text('Вы отменили приглашение!');
+
+            chat.server.canselRequest('@User.Identity.Name', selectUserId);
         });
     }
 
@@ -129,6 +141,6 @@
         selectUserId = $(this).val();
     });
 
-    </script>
+</script>
 }
 

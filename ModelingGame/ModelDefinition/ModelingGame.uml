@@ -1,0 +1,3387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="690214bb-b4cf-4da5-973d-b048b9ea09d3"
+  name="ModelingGame" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction
+        Id="e0f0dc5f-7507-4b93-a9c3-367a4f204f07"
+        name="GameUML"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="ca30f12d-58ec-4897-b1a3-5bc80e6de6a9">
+            <body>Запрашивает страницу "Арена"
+</body>
+          </comment>
+          <comment
+            Id="613267fd-6398-4e2b-95de-d7d4809393fa">
+            <body>Формирует список подключенных игроков</body>
+          </comment>
+          <comment
+            Id="fcdf003a-f7ce-4e2c-83a6-a206b102e6e5">
+            <body>Извещает всех подключенных клиентов о подключении нового игрока</body>
+          </comment>
+          <comment
+            Id="31653a63-c3a8-401a-84a6-0d3b1b7e7237">
+            <body>Приглашение на бой</body>
+          </comment>
+          <comment
+            Id="80e42f2b-8806-4121-a93c-7a11db2e0899">
+            <body>Принять бой</body>
+          </comment>
+          <comment
+            Id="0282c898-17d2-49a8-80ad-06d95acb03ee">
+            <body>Отказаться от боя</body>
+          </comment>
+          <comment
+            Id="4cde8945-6b84-48b8-bb18-64fff8910fdc">
+            <body>Отменить приглашение</body>
+          </comment>
+          <comment
+            Id="8837d0d9-210f-4f62-9ead-c890545d2f9c">
+            <body>Начало боя</body>
+          </comment>
+          <comment
+            Id="ada71503-c4c6-4cd2-982f-c15c660466f6">
+            <body>Пришел отказ от боя</body>
+          </comment>
+          <comment
+            Id="8e3c54f4-2aef-43a3-af84-95e206176f00">
+            <body>Пришло приглашение на бой</body>
+          </comment>
+          <comment
+            Id="2ecdb488-9121-48fc-b959-f9250ed92f95">
+            <body>Удар в бою</body>
+          </comment>
+          <comment
+            Id="41342ee5-fb38-443f-afc6-fba5c5053c69">
+            <body>Бой окончен</body>
+          </comment>
+          <comment
+            Id="60af5560-2744-452d-8918-3bce019a06bf">
+            <body>Закрыл страницу</body>
+          </comment>
+          <comment
+            Id="b24c710b-af25-4220-a9ad-98c6a5aa57ae">
+            <body>Удаляем пользователя из списка подключенных</body>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="df1f029c-2812-4332-9f48-eb37b177ff1b"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ab9af3cc-d15c-4e88-a350-cb2f7949a988"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="5e0d1fbd-d64c-4240-a606-a0ff40f33450"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="8e50945f-dc25-47a2-afe8-1acbefc3d08b"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0a951b26-7ed9-4efa-91b3-7f1f777fbab3"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="58981f81-bae0-4894-ab5c-704cda1cccb1"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b7c1fcbb-d119-4138-878b-4dcd13cfb938"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ef9ab1b8-a375-47a0-ad4f-68a11654853f"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7ade14a8-2780-4b0c-8e94-47d52deb7312"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="5e0d1fbd-d64c-4240-a606-a0ff40f33450"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="a970e7e1-53c9-4642-8dce-2d80da1782e8"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6a1e3ce1-33e5-4a80-ac25-17a00ff72a3b"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8e50945f-dc25-47a2-afe8-1acbefc3d08b"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="9d329404-2ed3-4aac-bdcd-1c146af05d7a"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="64cc4430-4c63-4391-9b37-7c400a439424"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="e0887864-58a7-4699-9633-c6d5e14eefe9"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="1e0dad73-e79d-4f21-9069-57bce54af953"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2ede29c1-cc23-458f-b29c-88d9d33251a6"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="e0887864-58a7-4699-9633-c6d5e14eefe9"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8d2164e4-391d-407b-b910-b7a390cdf0e6"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1e0dad73-e79d-4f21-9069-57bce54af953"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0a951b26-7ed9-4efa-91b3-7f1f777fbab3"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="58981f81-bae0-4894-ab5c-704cda1cccb1"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2ede29c1-cc23-458f-b29c-88d9d33251a6"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="64cc4430-4c63-4391-9b37-7c400a439424"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="95b7cf9f-e386-401a-a94b-ae7bf5a7e4ef"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="53dc8b8d-78f7-4135-b73c-98b52b76870a"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="a3e0aad0-7b1a-495a-a481-09d19685f3c7"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="b63cb90d-cb54-40f8-9b9c-9582b40dd851"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a81f22b0-8aef-4218-b0a6-5cdce5eaf684"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c46c21af-dde6-40f9-ac41-1efc06ee3ca0"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="b63cb90d-cb54-40f8-9b9c-9582b40dd851"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fda70a4c-2ae3-43a2-a922-fd30e555fa5a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a81f22b0-8aef-4218-b0a6-5cdce5eaf684"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b7c1fcbb-d119-4138-878b-4dcd13cfb938"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ef9ab1b8-a375-47a0-ad4f-68a11654853f"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c46c21af-dde6-40f9-ac41-1efc06ee3ca0"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="a3e0aad0-7b1a-495a-a481-09d19685f3c7"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="637b268a-e7cd-4153-afbb-400fa5dc1200"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7ade14a8-2780-4b0c-8e94-47d52deb7312"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fe546f1c-4651-4b5c-bcbc-7662d4014968"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ab9af3cc-d15c-4e88-a350-cb2f7949a988"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="bea0525d-5669-4e46-9195-3b5275ca2576"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="44e8052f-e6e3-490d-9ba2-d4687d7ddd44"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="5992dc51-77c3-4f85-b070-b6dac6ba06f2"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="cec9a507-cf62-4cc4-9ea4-604b48015fc5"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="d0739a1e-2b4b-4416-bf36-64118272d940"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="60177499-bf8e-4158-8792-31b26cbdea3c"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="320cae04-0ae0-4a7a-a3a5-fce1aee78524"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2f1af8ae-0534-4aa7-943a-9e1265cf9f18"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="cec9a507-cf62-4cc4-9ea4-604b48015fc5"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3e14c267-84cb-4d84-96b5-82d19384464f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d0739a1e-2b4b-4416-bf36-64118272d940"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7a3bbba0-252b-46fa-87d8-01cf69f455f1"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="0d8dec88-7dbb-435b-8f9c-478dd8e87d48"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="58400609-c797-4f4f-904f-394a6651e63f"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="62204e38-2843-4e23-8d8c-9e14a24929da"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="680512ea-21a5-47fd-b010-861488d9bfc1"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0ab4b4d3-efa7-406b-aa1c-272cb82a6da0"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="62204e38-2843-4e23-8d8c-9e14a24929da"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="394d0213-b560-47f3-9136-cad9726aad43"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="60177499-bf8e-4158-8792-31b26cbdea3c"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="680512ea-21a5-47fd-b010-861488d9bfc1"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0ab4b4d3-efa7-406b-aa1c-272cb82a6da0"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="320cae04-0ae0-4a7a-a3a5-fce1aee78524"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="58400609-c797-4f4f-904f-394a6651e63f"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="01248161-eff1-4a35-90f0-a6367b8df1bf"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="440066a8-e943-4f3f-b87e-bbad8fb0b567"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2f1af8ae-0534-4aa7-943a-9e1265cf9f18"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="5992dc51-77c3-4f85-b070-b6dac6ba06f2"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="bfd47a59-fbea-4443-8309-13734657a707"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="b08fb115-69a2-4311-af48-641b7de0d3ab"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="72a0cccd-0740-40f8-879c-03a2eaede841"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="dbf6d8e1-c6a5-44b5-9828-d13d57271b00"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5254bf3e-1aea-49b9-b7a8-a265079ef3dd"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e46ab238-82e6-4416-a33d-28c247c28332"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bd04751c-3dd7-492a-aad2-33e2befff4ce"
+                LastKnownName="MessageOccurrenceSpecification50"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3a0d5228-a5e7-44b0-8059-2a671ef6cb2d"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="dbf6d8e1-c6a5-44b5-9828-d13d57271b00"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9dc007a4-3f22-4552-b860-8624bf5ba60b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0ed6cf80-4173-4024-aaba-f5746a76a39b"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5254bf3e-1aea-49b9-b7a8-a265079ef3dd"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="22124bcf-9471-41e9-a03c-96de1a0d8d5f"
+            name="BehaviorExecutionSpecification13">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f721b388-1d35-4be5-9585-94814553a107"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="29b6a593-9ee5-4fc6-b78a-21e23e1a873f"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a252b8a3-2754-4928-8914-2f6376d4c275"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5a1a360c-27a9-40f2-8c5e-8ebea28fc71f"
+                LastKnownName="MessageOccurrenceSpecification49"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="29b6a593-9ee5-4fc6-b78a-21e23e1a873f"
+            name="ExecutionOccurrenceSpecification25">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cfd0b77e-decc-4cf4-8f5d-052a550a89af"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a252b8a3-2754-4928-8914-2f6376d4c275"
+            name="MessageOccurrenceSpecification48">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e46ab238-82e6-4416-a33d-28c247c28332"
+            name="MessageOccurrenceSpecification47">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5a1a360c-27a9-40f2-8c5e-8ebea28fc71f"
+            name="MessageOccurrenceSpecification49">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bd04751c-3dd7-492a-aad2-33e2befff4ce"
+            name="MessageOccurrenceSpecification50">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f721b388-1d35-4be5-9585-94814553a107"
+            name="ExecutionOccurrenceSpecification26">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3c3cacb8-d587-4bf0-921a-82d49280d67e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3a0d5228-a5e7-44b0-8059-2a671ef6cb2d"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9b52bd4e-afaa-47bd-abba-9ff12b9e05fd"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="72a0cccd-0740-40f8-879c-03a2eaede841"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0ccc4dd0-fcb6-4761-8edc-df23d1ee4e83"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="dd2acec5-7edd-4707-b34d-12819add43bb"
+            name="BehaviorExecutionSpecification10">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="fc1a8bfd-63f7-4a23-a502-378f00c993c9"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="54535ac9-caed-4468-92ea-90391e29ee48"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a4c1d29c-0f9e-4f7b-aaa2-792057326a18"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="73b99437-997b-467a-82c0-88264ced18be"
+                LastKnownName="MessageOccurrenceSpecification51"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7805a84b-7162-42ca-8ac2-e1ae20123b64"
+                LastKnownName="MessageOccurrenceSpecification54"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="cab920ca-0f48-4257-a4bd-0da470f361b5"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="54535ac9-caed-4468-92ea-90391e29ee48"
+            name="ExecutionOccurrenceSpecification19">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="79e04051-410b-4d24-ad88-89aa2b17882d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b0273a67-efe1-4b4f-ae1f-8608a66b16e7"
+            name="MessageOccurrenceSpecification35">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a4c1d29c-0f9e-4f7b-aaa2-792057326a18"
+            name="MessageOccurrenceSpecification36">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="d1527cf5-03be-49c5-acd3-ca2d5d49997d"
+            name="BehaviorExecutionSpecification14">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ce94ecf8-0773-4fd7-880e-3e1e22c588d4"
+                LastKnownName="ExecutionOccurrenceSpecification28"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="e8ca0813-cdb7-46f1-8c50-74144f2dc41a"
+                LastKnownName="ExecutionOccurrenceSpecification27"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="d192e04a-5e16-4656-92f7-542e51299ce8"
+                LastKnownName="MessageOccurrenceSpecification52"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="841e2292-ab3a-4bdb-9544-4477fcfe0ca0"
+                LastKnownName="MessageOccurrenceSpecification53"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="e8ca0813-cdb7-46f1-8c50-74144f2dc41a"
+            name="ExecutionOccurrenceSpecification27">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9b579279-b020-466f-8ef1-b608586649fa"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d192e04a-5e16-4656-92f7-542e51299ce8"
+            name="MessageOccurrenceSpecification52">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="73b99437-997b-467a-82c0-88264ced18be"
+            name="MessageOccurrenceSpecification51">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="841e2292-ab3a-4bdb-9544-4477fcfe0ca0"
+            name="MessageOccurrenceSpecification53">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7805a84b-7162-42ca-8ac2-e1ae20123b64"
+            name="MessageOccurrenceSpecification54">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ce94ecf8-0773-4fd7-880e-3e1e22c588d4"
+            name="ExecutionOccurrenceSpecification28">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8edf9e81-0d80-4f78-8e26-49bcd2550fe3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="83f73dbb-84e2-4383-a859-3dd72964ea2c"
+            name="MessageOccurrenceSpecification38">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="cab920ca-0f48-4257-a4bd-0da470f361b5"
+            name="MessageOccurrenceSpecification37">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="fc1a8bfd-63f7-4a23-a502-378f00c993c9"
+            name="ExecutionOccurrenceSpecification20">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4490f06f-e89f-4d9d-9172-ebd84d048ec0"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="6b456ec9-1f75-4153-bc9e-714aaa6c20db"
+            name="BehaviorExecutionSpecification11">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="c6133997-0ada-4341-87f5-b6126457fbc6"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="1e8cf400-d2b2-4a26-a5e6-84785303dcbf"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7f38a68a-e1c8-42f0-bbd9-b9e0055d667b"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a72a1b40-330a-43cb-8b5b-eee75bb5ed31"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1e9f1d52-555b-41c3-9f83-c4c7cb60782f"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0ccc81c6-fa7d-40a0-9a2e-a257ceea18f0"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="1e8cf400-d2b2-4a26-a5e6-84785303dcbf"
+            name="ExecutionOccurrenceSpecification21">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3e747144-9710-4a0f-bea6-9cb628192c2b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7f38a68a-e1c8-42f0-bbd9-b9e0055d667b"
+            name="MessageOccurrenceSpecification40">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0bad8bfc-6c19-4369-950f-f55879f29825"
+            name="MessageOccurrenceSpecification39">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="2fce3b65-0a57-46d3-bd59-f2cafdf5c0a4"
+            name="BehaviorExecutionSpecification12">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="364bcafc-6357-46c7-8993-d1439f249f08"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="78253bf1-06b8-47d4-bf3d-ef06cf10be34"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2297b9bd-fca4-4c94-acc1-9054e8dff854"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="da902a57-022a-4300-b98a-ac62216ad5b2"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="78253bf1-06b8-47d4-bf3d-ef06cf10be34"
+            name="ExecutionOccurrenceSpecification23">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8ac4b175-f0d8-4e91-acd8-26f13492f352"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a72a1b40-330a-43cb-8b5b-eee75bb5ed31"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2297b9bd-fca4-4c94-acc1-9054e8dff854"
+            name="MessageOccurrenceSpecification44">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="da902a57-022a-4300-b98a-ac62216ad5b2"
+            name="MessageOccurrenceSpecification45">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1e9f1d52-555b-41c3-9f83-c4c7cb60782f"
+            name="MessageOccurrenceSpecification46">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="364bcafc-6357-46c7-8993-d1439f249f08"
+            name="ExecutionOccurrenceSpecification24">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0807ee76-b895-40fc-ae24-359fe258b905"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="63a32fee-cda6-422a-bd1b-b0a33763cd28"
+            name="MessageOccurrenceSpecification42">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0ccc81c6-fa7d-40a0-9a2e-a257ceea18f0"
+            name="MessageOccurrenceSpecification41">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="c6133997-0ada-4341-87f5-b6126457fbc6"
+            name="ExecutionOccurrenceSpecification22">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="5f86c04f-ba69-41b7-a29b-16ffe7475e9e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment
+            Id="3a10c369-ddab-4af4-a7f2-59a26f70ae0f"
+            name="CombinedFragment1"
+            interactionOperator="Loop">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand
+                Id="3f76a1bd-4ef7-42b7-8771-e9052691f1b5"
+                name="InteractionOperand1">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                    LastKnownName="Server (Hub)"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <lifelineMoniker
+                    Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                    LastKnownName="Client1"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <lifelineMoniker
+                    Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                    LastKnownName="Client2"
+                    LastKnownLocation="ModelingGame.uml" />
+                </coveredLifelines>
+                <fragments>
+                  <combinedFragment
+                    Id="17915996-d80e-4b9e-a05c-1fac67f3b1c1"
+                    name="CombinedFragment1"
+                    interactionOperator="Opt">
+                    <coveredLifelines>
+                      <lifelineMoniker
+                        Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                        LastKnownName="Client1"
+                        LastKnownLocation="ModelingGame.uml" />
+                      <lifelineMoniker
+                        Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                        LastKnownName="Server (Hub)"
+                        LastKnownLocation="ModelingGame.uml" />
+                      <lifelineMoniker
+                        Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                        LastKnownName="Client2"
+                        LastKnownLocation="ModelingGame.uml" />
+                    </coveredLifelines>
+                    <operands>
+                      <interactionOperand
+                        Id="b8fc8807-fca1-4685-9d2c-8ddf576648e5"
+                        name="InteractionOperand1">
+                        <coveredLifelines>
+                          <lifelineMoniker
+                            Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                            LastKnownName="Client1"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <lifelineMoniker
+                            Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                            LastKnownName="Server (Hub)"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <lifelineMoniker
+                            Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                            LastKnownName="Client2"
+                            LastKnownLocation="ModelingGame.uml" />
+                        </coveredLifelines>
+                        <guard>
+                          <interactionConstraint
+                            Id="7d4f4ea1-ce17-4b16-8627-c4cab2ddfa02"
+                            guardText="Если условия продолжения боя не выполняются - выход из цикла" />
+                        </guard>
+                        <operandOccurrenceSpecifications>
+                          <operandOccurrenceSpecificationMoniker
+                            Id="e9daa31c-a067-4a8e-9346-9a9e4ec7f497"
+                            LastKnownName="OperandOccurrenceSpecification11"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="6f8331ef-e1b4-44cd-b1ec-757210206e96"
+                            LastKnownName="OperandOccurrenceSpecification12"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="ff057f3f-a351-4713-886b-5fdb463fe4ee"
+                            LastKnownName="OperandOccurrenceSpecification13"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="6ed707cb-4851-48e4-a746-0a5d2e3efb15"
+                            LastKnownName="OperandOccurrenceSpecification14"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="4b3bfc40-bea1-4a5c-802f-2c65907203bf"
+                            LastKnownName="OperandOccurrenceSpecification15"
+                            LastKnownLocation="ModelingGame.uml" />
+                          <operandOccurrenceSpecificationMoniker
+                            Id="d2943767-d276-45a7-8754-d4e7ba3c5e94"
+                            LastKnownName="OperandOccurrenceSpecification16"
+                            LastKnownLocation="ModelingGame.uml" />
+                        </operandOccurrenceSpecifications>
+                      </interactionOperand>
+                    </operands>
+                  </combinedFragment>
+                </fragments>
+                <guard>
+                  <interactionConstraint
+                    Id="159274fb-a5c4-4a64-80b2-805f73dff401"
+                    guardText="Пока выполняются условия продолжения боя">
+                    <maxInt>
+                      <literalString
+                        Id="85aa821e-c60a-4958-b2d1-f4103b478f14"
+                        name="LiteralString1" />
+                    </maxInt>
+                    <minInt>
+                      <literalString
+                        Id="dce0e019-5dd6-459e-82b4-1303e2750bb3"
+                        name="LiteralString2" />
+                    </minInt>
+                  </interactionConstraint>
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="49925d27-1db1-48ad-812a-b3a22c6a881e"
+                    LastKnownName="OperandOccurrenceSpecification5"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="c40e9040-78c1-44a3-9ae9-34eda81e693e"
+                    LastKnownName="OperandOccurrenceSpecification6"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="a82edc99-1f5f-470f-86c6-b9bd23cce491"
+                    LastKnownName="OperandOccurrenceSpecification7"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="84c80ab9-1fad-47e9-9379-fcd1c3550380"
+                    LastKnownName="OperandOccurrenceSpecification8"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="80d3825d-e586-4e9d-838b-5f879f0af4bd"
+                    LastKnownName="OperandOccurrenceSpecification9"
+                    LastKnownLocation="ModelingGame.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="0feb5ee8-1d4c-4c9e-aa69-bd1f6dbe2bec"
+                    LastKnownName="OperandOccurrenceSpecification10"
+                    LastKnownLocation="ModelingGame.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification
+            Id="a82edc99-1f5f-470f-86c6-b9bd23cce491"
+            name="OperandOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="80d3825d-e586-4e9d-838b-5f879f0af4bd"
+            name="OperandOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="49925d27-1db1-48ad-812a-b3a22c6a881e"
+            name="OperandOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="75aa39ce-31c7-46a5-b5a4-0ff54e4cf428"
+            name="BehaviorExecutionSpecification15">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="b50adaee-93c5-4991-a154-081d31e8585e"
+                LastKnownName="ExecutionOccurrenceSpecification30"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="87610191-7efd-4154-a411-87fa33873851"
+                LastKnownName="ExecutionOccurrenceSpecification29"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="3b5b0d19-60b2-4242-bc44-d7d50bc058ba"
+                LastKnownName="MessageOccurrenceSpecification56"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9a59ec6c-4027-410c-a180-a2cc118a33a0"
+                LastKnownName="MessageOccurrenceSpecification59"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="483ed015-98e5-4ee6-bb17-4dc2081da06a"
+                LastKnownName="MessageOccurrenceSpecification62"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="ff057f3f-a351-4713-886b-5fdb463fe4ee"
+                LastKnownName="OperandOccurrenceSpecification13"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0af62867-f70a-4a92-b4d1-6e4a81d21130"
+                LastKnownName="MessageOccurrenceSpecification71"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="92b6c2cf-44b6-4eaa-87a8-14e3ed6cf6f2"
+                LastKnownName="MessageOccurrenceSpecification74"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c8b3948c-d640-4567-9251-4d04f517c840"
+                LastKnownName="MessageOccurrenceSpecification95"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="54a7fa36-800f-4905-8822-9fd3c7a3aabd"
+                LastKnownName="MessageOccurrenceSpecification98"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="6ed707cb-4851-48e4-a746-0a5d2e3efb15"
+                LastKnownName="OperandOccurrenceSpecification14"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a5990443-09a2-403d-8511-e1dfa463c47d"
+                LastKnownName="MessageOccurrenceSpecification57"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="87610191-7efd-4154-a411-87fa33873851"
+            name="ExecutionOccurrenceSpecification29">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="1a74cdbb-701f-41cd-83ae-38a4721d0b79"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3b5b0d19-60b2-4242-bc44-d7d50bc058ba"
+            name="MessageOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fc449138-7a90-40be-93bb-8bed77dd9bb8"
+            name="MessageOccurrenceSpecification55">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="d030adf3-dd48-4115-bcf3-cde1cab05e9f"
+            name="BehaviorExecutionSpecification16">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3a4e4eb7-979e-458d-bb77-43fc66a84ba1"
+                LastKnownName="ExecutionOccurrenceSpecification32"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="97730122-06fb-4b36-a991-a10faea125bd"
+                LastKnownName="ExecutionOccurrenceSpecification31"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5ce423a2-c6fa-412a-ac48-d2745cec67e2"
+                LastKnownName="MessageOccurrenceSpecification60"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9babbe76-36a6-4bd3-bc54-1cf870437744"
+                LastKnownName="MessageOccurrenceSpecification61"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="97730122-06fb-4b36-a991-a10faea125bd"
+            name="ExecutionOccurrenceSpecification31">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="aa62f768-f077-4040-92ff-8305b880c249"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9a59ec6c-4027-410c-a180-a2cc118a33a0"
+            name="MessageOccurrenceSpecification59">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5ce423a2-c6fa-412a-ac48-d2745cec67e2"
+            name="MessageOccurrenceSpecification60">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="483ed015-98e5-4ee6-bb17-4dc2081da06a"
+            name="MessageOccurrenceSpecification62">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9babbe76-36a6-4bd3-bc54-1cf870437744"
+            name="MessageOccurrenceSpecification61">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3a4e4eb7-979e-458d-bb77-43fc66a84ba1"
+            name="ExecutionOccurrenceSpecification32">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4a55f111-06eb-40b7-a1be-5116f7cc2b81"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="e9daa31c-a067-4a8e-9346-9a9e4ec7f497"
+            name="OperandOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="ff057f3f-a351-4713-886b-5fdb463fe4ee"
+            name="OperandOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="4b3bfc40-bea1-4a5c-802f-2c65907203bf"
+            name="OperandOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="fa55b865-ae7d-493a-b4d1-0dd70c2a9505"
+            name="BehaviorExecutionSpecification19">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="26bbc484-7f48-48e8-b50d-cde97a075aa3"
+                LastKnownName="ExecutionOccurrenceSpecification38"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="6cfc9af6-5148-4c94-8c26-217df9bc69d4"
+                LastKnownName="ExecutionOccurrenceSpecification37"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="41ebafee-84c8-432d-bbe7-31e2b16cc155"
+                LastKnownName="MessageOccurrenceSpecification72"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bb5fb5af-bb2c-4d6c-b687-2e2b43c1e660"
+                LastKnownName="MessageOccurrenceSpecification73"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="6cfc9af6-5148-4c94-8c26-217df9bc69d4"
+            name="ExecutionOccurrenceSpecification37">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9ed53ca0-b1bd-4014-921a-453c0a68bff5"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="41ebafee-84c8-432d-bbe7-31e2b16cc155"
+            name="MessageOccurrenceSpecification72">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0af62867-f70a-4a92-b4d1-6e4a81d21130"
+            name="MessageOccurrenceSpecification71">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="92b6c2cf-44b6-4eaa-87a8-14e3ed6cf6f2"
+            name="MessageOccurrenceSpecification74">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bb5fb5af-bb2c-4d6c-b687-2e2b43c1e660"
+            name="MessageOccurrenceSpecification73">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="26bbc484-7f48-48e8-b50d-cde97a075aa3"
+            name="ExecutionOccurrenceSpecification38">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b6a5e796-ab88-43d2-bb47-44c65f9c1bf4"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="82cc0422-295e-48e9-ad0f-bf5315c977ba"
+            name="BehaviorExecutionSpecification25">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="56fba011-b7ad-4472-98c3-5930606839c1"
+                LastKnownName="ExecutionOccurrenceSpecification50"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="9f5831d8-a652-470c-a7f8-d7db23bb9406"
+                LastKnownName="ExecutionOccurrenceSpecification49"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="35e79adf-3586-4c56-bb02-09d846725d15"
+                LastKnownName="MessageOccurrenceSpecification96"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c873c068-920b-4b9b-b233-58f7dfb8e9b6"
+                LastKnownName="MessageOccurrenceSpecification97"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="9f5831d8-a652-470c-a7f8-d7db23bb9406"
+            name="ExecutionOccurrenceSpecification49">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4962616f-db9c-4109-9436-8bee91fc4f2a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="35e79adf-3586-4c56-bb02-09d846725d15"
+            name="MessageOccurrenceSpecification96">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c8b3948c-d640-4567-9251-4d04f517c840"
+            name="MessageOccurrenceSpecification95">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="54a7fa36-800f-4905-8822-9fd3c7a3aabd"
+            name="MessageOccurrenceSpecification98">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c873c068-920b-4b9b-b233-58f7dfb8e9b6"
+            name="MessageOccurrenceSpecification97">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="56fba011-b7ad-4472-98c3-5930606839c1"
+            name="ExecutionOccurrenceSpecification50">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b33e61c0-d691-4e04-864e-26e82b2112f6"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="d2943767-d276-45a7-8754-d4e7ba3c5e94"
+            name="OperandOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="6ed707cb-4851-48e4-a746-0a5d2e3efb15"
+            name="OperandOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="6f8331ef-e1b4-44cd-b1ec-757210206e96"
+            name="OperandOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a5990443-09a2-403d-8511-e1dfa463c47d"
+            name="MessageOccurrenceSpecification57">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="740e32ed-b94e-467b-bb34-48c5f90d75eb"
+            name="MessageOccurrenceSpecification58">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b50adaee-93c5-4991-a154-081d31e8585e"
+            name="ExecutionOccurrenceSpecification30">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d04bb451-b246-426b-b1d5-6ba3484f8a2a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="0feb5ee8-1d4c-4c9e-aa69-bd1f6dbe2bec"
+            name="OperandOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="c40e9040-78c1-44a3-9ae9-34eda81e693e"
+            name="OperandOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="84c80ab9-1fad-47e9-9379-fcd1c3550380"
+            name="OperandOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="f6a47de2-7c35-443c-8ff6-71a8fb0f2867"
+            name="BehaviorExecutionSpecification23">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="52bbf2f1-c1b5-407c-b252-922862efcc8e"
+                LastKnownName="ExecutionOccurrenceSpecification46"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="c2425839-bc94-46a3-ac7a-f22c152ea3fc"
+                LastKnownName="ExecutionOccurrenceSpecification45"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a4b2bf6b-5350-4676-a41f-9b8fb0add09f"
+                LastKnownName="MessageOccurrenceSpecification88"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4dd2a0d6-c47e-4cdf-87ba-b9b4a78aa2a6"
+                LastKnownName="MessageOccurrenceSpecification91"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="93f5a881-0db2-4161-b063-d347f7b3166f"
+                LastKnownName="MessageOccurrenceSpecification94"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6db8fa6f-5cc9-45d6-b450-cfb9eaffc186"
+                LastKnownName="MessageOccurrenceSpecification89"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="c2425839-bc94-46a3-ac7a-f22c152ea3fc"
+            name="ExecutionOccurrenceSpecification45">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6ee7bbad-f00d-4d72-ade4-b23960017fa6"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c63083bf-9cc4-4031-91a8-d0218f098603"
+            name="MessageOccurrenceSpecification87">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a4b2bf6b-5350-4676-a41f-9b8fb0add09f"
+            name="MessageOccurrenceSpecification88">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1700d5e4-1df3-4d5b-ac5f-bf8098cd0f43"
+            name="BehaviorExecutionSpecification24">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="02d87a19-f781-4553-a65f-f35341d49a3d"
+                LastKnownName="ExecutionOccurrenceSpecification48"
+                LastKnownLocation="ModelingGame.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="8efa353a-a58f-4bca-b8de-8ff0d5aaa176"
+                LastKnownName="ExecutionOccurrenceSpecification47"
+                LastKnownLocation="ModelingGame.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="aa8fdf90-ed93-4f2a-9b4c-1cfdbf7b88e4"
+                LastKnownName="MessageOccurrenceSpecification92"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="18b341bd-17ac-4668-be2c-aae26a073b20"
+                LastKnownName="MessageOccurrenceSpecification93"
+                LastKnownLocation="ModelingGame.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="8efa353a-a58f-4bca-b8de-8ff0d5aaa176"
+            name="ExecutionOccurrenceSpecification47">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="356031e1-fd75-4fcb-a868-d37eba4c5de4"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="aa8fdf90-ed93-4f2a-9b4c-1cfdbf7b88e4"
+            name="MessageOccurrenceSpecification92">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4dd2a0d6-c47e-4cdf-87ba-b9b4a78aa2a6"
+            name="MessageOccurrenceSpecification91">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="93f5a881-0db2-4161-b063-d347f7b3166f"
+            name="MessageOccurrenceSpecification94">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="18b341bd-17ac-4668-be2c-aae26a073b20"
+            name="MessageOccurrenceSpecification93">
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="02d87a19-f781-4553-a65f-f35341d49a3d"
+            name="ExecutionOccurrenceSpecification48">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f97e9ed2-cafe-40b3-93d9-bfceed4fd6ea"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+                LastKnownName="Client2"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f73b67e3-0c71-462e-9927-40318a6227d8"
+            name="MessageOccurrenceSpecification90">
+            <covered>
+              <lifelineMoniker
+                Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+                LastKnownName="Client1"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6db8fa6f-5cc9-45d6-b450-cfb9eaffc186"
+            name="MessageOccurrenceSpecification89">
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="52bbf2f1-c1b5-407c-b252-922862efcc8e"
+            name="ExecutionOccurrenceSpecification46">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="7b723501-d26c-4d7b-bc70-e70482acc898"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingGame.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+                LastKnownName="Server (Hub)"
+                LastKnownLocation="ModelingGame.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="44ba9db5-b361-44ce-95c4-4207a5728755"
+            name="Client1"
+            isActor="false"
+            lifelineDisplayName="Client1">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="6a1e3ce1-33e5-4a80-ac25-17a00ff72a3b"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="e0887864-58a7-4699-9633-c6d5e14eefe9"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="64cc4430-4c63-4391-9b37-7c400a439424"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="fe546f1c-4651-4b5c-bcbc-7662d4014968"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7a3bbba0-252b-46fa-87d8-01cf69f455f1"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="440066a8-e943-4f3f-b87e-bbad8fb0b567"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="29b6a593-9ee5-4fc6-b78a-21e23e1a873f"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f721b388-1d35-4be5-9585-94814553a107"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="e8ca0813-cdb7-46f1-8c50-74144f2dc41a"
+                LastKnownName="ExecutionOccurrenceSpecification27"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ce94ecf8-0773-4fd7-880e-3e1e22c588d4"
+                LastKnownName="ExecutionOccurrenceSpecification28"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0bad8bfc-6c19-4369-950f-f55879f29825"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="63a32fee-cda6-422a-bd1b-b0a33763cd28"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="a82edc99-1f5f-470f-86c6-b9bd23cce491"
+                LastKnownName="OperandOccurrenceSpecification7"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="fc449138-7a90-40be-93bb-8bed77dd9bb8"
+                LastKnownName="MessageOccurrenceSpecification55"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="e9daa31c-a067-4a8e-9346-9a9e4ec7f497"
+                LastKnownName="OperandOccurrenceSpecification11"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="6cfc9af6-5148-4c94-8c26-217df9bc69d4"
+                LastKnownName="ExecutionOccurrenceSpecification37"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="26bbc484-7f48-48e8-b50d-cde97a075aa3"
+                LastKnownName="ExecutionOccurrenceSpecification38"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="6f8331ef-e1b4-44cd-b1ec-757210206e96"
+                LastKnownName="OperandOccurrenceSpecification12"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="740e32ed-b94e-467b-bb34-48c5f90d75eb"
+                LastKnownName="MessageOccurrenceSpecification58"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="84c80ab9-1fad-47e9-9379-fcd1c3550380"
+                LastKnownName="OperandOccurrenceSpecification8"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c63083bf-9cc4-4031-91a8-d0218f098603"
+                LastKnownName="MessageOccurrenceSpecification87"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f73b67e3-0c71-462e-9927-40318a6227d8"
+                LastKnownName="MessageOccurrenceSpecification90"
+                LastKnownLocation="ModelingGame.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5d548fb0-1843-4aa8-83fd-a198d595d00a"
+            name="Server (Hub)"
+            isActor="false"
+            lifelineDisplayName="Server (Hub)">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="5e0d1fbd-d64c-4240-a606-a0ff40f33450"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ab9af3cc-d15c-4e88-a350-cb2f7949a988"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="cec9a507-cf62-4cc4-9ea4-604b48015fc5"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="5992dc51-77c3-4f85-b070-b6dac6ba06f2"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dbf6d8e1-c6a5-44b5-9828-d13d57271b00"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="72a0cccd-0740-40f8-879c-03a2eaede841"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="54535ac9-caed-4468-92ea-90391e29ee48"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="fc1a8bfd-63f7-4a23-a502-378f00c993c9"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="1e8cf400-d2b2-4a26-a5e6-84785303dcbf"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="c6133997-0ada-4341-87f5-b6126457fbc6"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="49925d27-1db1-48ad-812a-b3a22c6a881e"
+                LastKnownName="OperandOccurrenceSpecification5"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="87610191-7efd-4154-a411-87fa33873851"
+                LastKnownName="ExecutionOccurrenceSpecification29"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b50adaee-93c5-4991-a154-081d31e8585e"
+                LastKnownName="ExecutionOccurrenceSpecification30"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="c40e9040-78c1-44a3-9ae9-34eda81e693e"
+                LastKnownName="OperandOccurrenceSpecification6"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="c2425839-bc94-46a3-ac7a-f22c152ea3fc"
+                LastKnownName="ExecutionOccurrenceSpecification45"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="52bbf2f1-c1b5-407c-b252-922862efcc8e"
+                LastKnownName="ExecutionOccurrenceSpecification46"
+                LastKnownLocation="ModelingGame.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="50f9fc7e-8a9b-481b-8a5a-6ae4a1ae71d0"
+            name="Client2"
+            isActor="false"
+            lifelineDisplayName="Client2">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="b63cb90d-cb54-40f8-9b9c-9582b40dd851"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="a3e0aad0-7b1a-495a-a481-09d19685f3c7"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="62204e38-2843-4e23-8d8c-9e14a24929da"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="58400609-c797-4f4f-904f-394a6651e63f"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0ed6cf80-4173-4024-aaba-f5746a76a39b"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9b52bd4e-afaa-47bd-abba-9ff12b9e05fd"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b0273a67-efe1-4b4f-ae1f-8608a66b16e7"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="ModelingGame.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="83f73dbb-84e2-4383-a859-3dd72964ea2c"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="78253bf1-06b8-47d4-bf3d-ef06cf10be34"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="364bcafc-6357-46c7-8993-d1439f249f08"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="80d3825d-e586-4e9d-838b-5f879f0af4bd"
+                LastKnownName="OperandOccurrenceSpecification9"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="97730122-06fb-4b36-a991-a10faea125bd"
+                LastKnownName="ExecutionOccurrenceSpecification31"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3a4e4eb7-979e-458d-bb77-43fc66a84ba1"
+                LastKnownName="ExecutionOccurrenceSpecification32"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="4b3bfc40-bea1-4a5c-802f-2c65907203bf"
+                LastKnownName="OperandOccurrenceSpecification15"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="9f5831d8-a652-470c-a7f8-d7db23bb9406"
+                LastKnownName="ExecutionOccurrenceSpecification49"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="56fba011-b7ad-4472-98c3-5930606839c1"
+                LastKnownName="ExecutionOccurrenceSpecification50"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="d2943767-d276-45a7-8754-d4e7ba3c5e94"
+                LastKnownName="OperandOccurrenceSpecification16"
+                LastKnownLocation="ModelingGame.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="0feb5ee8-1d4c-4c9e-aa69-bd1f6dbe2bec"
+                LastKnownName="OperandOccurrenceSpecification10"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8efa353a-a58f-4bca-b8de-8ff0d5aaa176"
+                LastKnownName="ExecutionOccurrenceSpecification47"
+                LastKnownLocation="ModelingGame.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="02d87a19-f781-4553-a65f-f35341d49a3d"
+                LastKnownName="ExecutionOccurrenceSpecification48"
+                LastKnownLocation="ModelingGame.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="77e4d3b6-0c5c-4c15-a05c-7aa56e45b1b6"
+            name="onConnected()"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6a1e3ce1-33e5-4a80-ac25-17a00ff72a3b"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8e50945f-dc25-47a2-afe8-1acbefc3d08b"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="fb117e2e-326b-4fee-9cc3-3b458d789fa3"
+            name="Clients.Caller.onConnected(connectionId, userName, Users)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0a951b26-7ed9-4efa-91b3-7f1f777fbab3"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1e0dad73-e79d-4f21-9069-57bce54af953"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="a227dc28-3b04-457e-8db3-f20aaca0f4a3"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2ede29c1-cc23-458f-b29c-88d9d33251a6"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="58981f81-bae0-4894-ab5c-704cda1cccb1"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c30c9a75-d430-4121-8b8b-ff1a039f3691"
+            name="Clients.AllExcept(connectionId).onNewUserConnected(connectionId, userName)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b7c1fcbb-d119-4138-878b-4dcd13cfb938"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a81f22b0-8aef-4218-b0a6-5cdce5eaf684"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b94e3a13-3c75-4547-8b7c-74a8d604c7a0"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c46c21af-dde6-40f9-ac41-1efc06ee3ca0"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ef9ab1b8-a375-47a0-ad4f-68a11654853f"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b4a7ea55-cfcf-486b-9fed-f4ff142fe996"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7ade14a8-2780-4b0c-8e94-47d52deb7312"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="fe546f1c-4651-4b5c-bcbc-7662d4014968"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="37d07ebf-6a48-42f1-b014-55cad7b15a96"
+            name="InviteUser(user1, user2)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7a3bbba0-252b-46fa-87d8-01cf69f455f1"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d0739a1e-2b4b-4416-bf36-64118272d940"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="7e1db8da-4997-4d33-bd87-e97e16759640"
+            name="Clients.Client(user2).inviteUser(user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="60177499-bf8e-4158-8792-31b26cbdea3c"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="680512ea-21a5-47fd-b010-861488d9bfc1"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="873feb8a-27c3-4505-a937-ed58319a4709"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0ab4b4d3-efa7-406b-aa1c-272cb82a6da0"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="320cae04-0ae0-4a7a-a3a5-fce1aee78524"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="a413d2cf-d36b-4960-8b49-2c75e14dec50"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2f1af8ae-0534-4aa7-943a-9e1265cf9f18"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="440066a8-e943-4f3f-b87e-bbad8fb0b567"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e76e9a0f-b29b-4081-90f1-5f38acdec73d"
+            name="AcceptAnswer(userName,user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0ed6cf80-4173-4024-aaba-f5746a76a39b"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5254bf3e-1aea-49b9-b7a8-a265079ef3dd"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="48305ff9-94b1-4b71-af28-ee1f92c78c0e"
+            name="Clients.Client(user1).acceptAnswer(user2)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e46ab238-82e6-4416-a33d-28c247c28332"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a252b8a3-2754-4928-8914-2f6376d4c275"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e48c09bd-e210-4655-b61f-1a2ce82ba821"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5a1a360c-27a9-40f2-8c5e-8ebea28fc71f"
+                LastKnownName="MessageOccurrenceSpecification49"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bd04751c-3dd7-492a-aad2-33e2befff4ce"
+                LastKnownName="MessageOccurrenceSpecification50"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="0598671c-2c7a-4378-958a-e38cc56afc53"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3a0d5228-a5e7-44b0-8059-2a671ef6cb2d"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9b52bd4e-afaa-47bd-abba-9ff12b9e05fd"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="bee68dc0-2a13-4055-95d1-25bbb4f1338c"
+            name="RenounAnswer(userName, user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b0273a67-efe1-4b4f-ae1f-8608a66b16e7"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a4c1d29c-0f9e-4f7b-aaa2-792057326a18"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="bee4ab60-f950-4db4-9bdd-0f2616bb8bd9"
+            name="Clients.Client(user1).renounAnswer(user2)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="73b99437-997b-467a-82c0-88264ced18be"
+                LastKnownName="MessageOccurrenceSpecification51"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d192e04a-5e16-4656-92f7-542e51299ce8"
+                LastKnownName="MessageOccurrenceSpecification52"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="438c072f-1761-49ca-9fe8-aa2f611bb613"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="841e2292-ab3a-4bdb-9544-4477fcfe0ca0"
+                LastKnownName="MessageOccurrenceSpecification53"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7805a84b-7162-42ca-8ac2-e1ae20123b64"
+                LastKnownName="MessageOccurrenceSpecification54"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="79b9c864-331c-4580-89d2-1964343cd3e1"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="cab920ca-0f48-4257-a4bd-0da470f361b5"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="83f73dbb-84e2-4383-a859-3dd72964ea2c"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e4884bef-32c3-49c0-8d1b-4fe9c18e319e"
+            name="CanselRequest(userName, user2)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0bad8bfc-6c19-4369-950f-f55879f29825"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7f38a68a-e1c8-42f0-bbd9-b9e0055d667b"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ba214ad9-60e0-49ee-8d43-02619ae6ee73"
+            name="Clients.Client(user2).canselRequest(user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a72a1b40-330a-43cb-8b5b-eee75bb5ed31"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2297b9bd-fca4-4c94-acc1-9054e8dff854"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="35a63098-f246-4995-8d40-2640beb7825e"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="da902a57-022a-4300-b98a-ac62216ad5b2"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1e9f1d52-555b-41c3-9f83-c4c7cb60782f"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="90c66c5f-37ee-4761-8438-f9f10cc8aeb7"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0ccc81c6-fa7d-40a0-9a2e-a257ceea18f0"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="63a32fee-cda6-422a-bd1b-b0a33763cd28"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="07411f09-8ab8-409f-bbff-66c400018596"
+            name="AddHit(user1, user2, &quot;Hit&quot;)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="fc449138-7a90-40be-93bb-8bed77dd9bb8"
+                LastKnownName="MessageOccurrenceSpecification55"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3b5b0d19-60b2-4242-bc44-d7d50bc058ba"
+                LastKnownName="MessageOccurrenceSpecification56"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f0d1e5d2-2dd8-44ea-9359-c96b99e89e39"
+            name="Clients.Client(user2).addHit(user2, user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9a59ec6c-4027-410c-a180-a2cc118a33a0"
+                LastKnownName="MessageOccurrenceSpecification59"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5ce423a2-c6fa-412a-ac48-d2745cec67e2"
+                LastKnownName="MessageOccurrenceSpecification60"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b43e72f4-71a2-496f-83a7-53fcd6ed12b2"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9babbe76-36a6-4bd3-bc54-1cf870437744"
+                LastKnownName="MessageOccurrenceSpecification61"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="483ed015-98e5-4ee6-bb17-4dc2081da06a"
+                LastKnownName="MessageOccurrenceSpecification62"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b71f95ab-b81f-483b-949d-3b7048e19a4f"
+            name="Clients.Client(user1).battleEnd(user2)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0af62867-f70a-4a92-b4d1-6e4a81d21130"
+                LastKnownName="MessageOccurrenceSpecification71"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="41ebafee-84c8-432d-bbe7-31e2b16cc155"
+                LastKnownName="MessageOccurrenceSpecification72"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e9db4620-b5bb-402d-acae-d3975801a248"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bb5fb5af-bb2c-4d6c-b687-2e2b43c1e660"
+                LastKnownName="MessageOccurrenceSpecification73"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="92b6c2cf-44b6-4eaa-87a8-14e3ed6cf6f2"
+                LastKnownName="MessageOccurrenceSpecification74"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9f5a2127-d848-40d6-98d2-c505a5db0233"
+            name="Clients.Client(user2).battleEnd(user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c8b3948c-d640-4567-9251-4d04f517c840"
+                LastKnownName="MessageOccurrenceSpecification95"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="35e79adf-3586-4c56-bb02-09d846725d15"
+                LastKnownName="MessageOccurrenceSpecification96"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="99119c9b-127a-4f79-a4bb-73cef8a42ea8"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c873c068-920b-4b9b-b233-58f7dfb8e9b6"
+                LastKnownName="MessageOccurrenceSpecification97"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="54a7fa36-800f-4905-8822-9fd3c7a3aabd"
+                LastKnownName="MessageOccurrenceSpecification98"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="37503baa-2086-4c66-a611-fa0c2727069c"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a5990443-09a2-403d-8511-e1dfa463c47d"
+                LastKnownName="MessageOccurrenceSpecification57"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="740e32ed-b94e-467b-bb34-48c5f90d75eb"
+                LastKnownName="MessageOccurrenceSpecification58"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="42234b6b-a823-4e58-84b3-a107bf22b077"
+            name="OnDisconnected()"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c63083bf-9cc4-4031-91a8-d0218f098603"
+                LastKnownName="MessageOccurrenceSpecification87"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a4b2bf6b-5350-4676-a41f-9b8fb0add09f"
+                LastKnownName="MessageOccurrenceSpecification88"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="48404682-d181-48bf-ac3e-94bb6d6f83f1"
+            name="Clients.Caller.onUserDisconnected(user1)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4dd2a0d6-c47e-4cdf-87ba-b9b4a78aa2a6"
+                LastKnownName="MessageOccurrenceSpecification91"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="aa8fdf90-ed93-4f2a-9b4c-1cfdbf7b88e4"
+                LastKnownName="MessageOccurrenceSpecification92"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="82f03781-df76-45fe-ab5a-a28313ed4dde"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="18b341bd-17ac-4668-be2c-aae26a073b20"
+                LastKnownName="MessageOccurrenceSpecification93"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="93f5a881-0db2-4161-b063-d347f7b3166f"
+                LastKnownName="MessageOccurrenceSpecification94"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="bd09173e-9d0b-433d-885f-7f134c7bb0a1"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6db8fa6f-5cc9-45d6-b450-cfb9eaffc186"
+                LastKnownName="MessageOccurrenceSpecification89"
+                LastKnownLocation="ModelingGame.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f73b67e3-0c71-462e-9927-40318a6227d8"
+                LastKnownName="MessageOccurrenceSpecification90"
+                LastKnownLocation="ModelingGame.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3e14c267-84cb-4d84-96b5-82d19384464f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="bfd47a59-fbea-4443-8309-13734657a707"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="a970e7e1-53c9-4642-8dce-2d80da1782e8"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="bea0525d-5669-4e46-9195-3b5275ca2576"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8d2164e4-391d-407b-b910-b7a390cdf0e6"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="95b7cf9f-e386-401a-a94b-ae7bf5a7e4ef"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fda70a4c-2ae3-43a2-a922-fd30e555fa5a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="637b268a-e7cd-4153-afbb-400fa5dc1200"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="394d0213-b560-47f3-9136-cad9726aad43"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="01248161-eff1-4a35-90f0-a6367b8df1bf"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9dc007a4-3f22-4552-b860-8624bf5ba60b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0ccc4dd0-fcb6-4761-8edc-df23d1ee4e83"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="79e04051-410b-4d24-ad88-89aa2b17882d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4490f06f-e89f-4d9d-9172-ebd84d048ec0"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3e747144-9710-4a0f-bea6-9cb628192c2b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="5f86c04f-ba69-41b7-a29b-16ffe7475e9e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8ac4b175-f0d8-4e91-acd8-26f13492f352"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0807ee76-b895-40fc-ae24-359fe258b905"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cfd0b77e-decc-4cf4-8f5d-052a550a89af"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3c3cacb8-d587-4bf0-921a-82d49280d67e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9b579279-b020-466f-8ef1-b608586649fa"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8edf9e81-0d80-4f78-8e26-49bcd2550fe3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="1a74cdbb-701f-41cd-83ae-38a4721d0b79"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d04bb451-b246-426b-b1d5-6ba3484f8a2a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="aa62f768-f077-4040-92ff-8305b880c249"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4a55f111-06eb-40b7-a1be-5116f7cc2b81"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9ed53ca0-b1bd-4014-921a-453c0a68bff5"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b6a5e796-ab88-43d2-bb47-44c65f9c1bf4"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6ee7bbad-f00d-4d72-ade4-b23960017fa6"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="7b723501-d26c-4d7b-bc70-e70482acc898"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="356031e1-fd75-4fcb-a868-d37eba4c5de4"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f97e9ed2-cafe-40b3-93d9-bfceed4fd6ea"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4962616f-db9c-4109-9436-8bee91fc4f2a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b33e61c0-d691-4e04-864e-26e82b2112f6"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
