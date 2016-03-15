@@ -32,9 +32,9 @@
 
 <label id="message"></label>
 
-<div class="row" id="answerToBattle" hidden="hidden">
-    <button id="acceptButton">Принять бой</button>
-    <button id="renounAnswerButton">Отменить</button>
+<div class="row" id="inviteToBattle" hidden="hidden">
+    <button id="acceptBattleButton">Принять бой</button>
+    <button id="canselBattleButton">Отменить</button>
 </div>
 
 <div class="row" id="requestToBattle" hidden="hidden">
@@ -84,8 +84,19 @@
 
         chat.client.inviteUser = function (user) {
             $('#message').text('Вас приглашает на бой ' + user.Name);
-            $('#answerToBattle').removeAttr('hidden');
+            $('#inviteToBattle').removeAttr('hidden');
             user2 = user;
+        }
+
+        chat.client.canselRequest = function (userName) {
+            $('#message').text(userName + ' отменил приглашение');
+            $('#inviteToBattle').attr('hidden', 'hidden');
+            user2 = {};
+        }
+
+        chat.client.canselBattle = function (userName) {
+            $('#message').text(userName + ' отменил приглашение');
+            $('#requestToBattle').attr('hidden', 'hidden');
         }
     }
 
@@ -104,24 +115,26 @@
             $('#message').text('Вы пригласили на бой ' + $('#users :selected').text());
             $('#requestToBattle').removeAttr('hidden');
 
-            chat.server.inviteUser('@User.Identity.Name', selectUserId);
+            chat.server.inviteSelectUser('@User.Identity.Name', selectUserId);
         });
 
-        $('#acceptButton').click(function () {
-            $('#invite').attr('hidden', 'hidden');
-            $('#message').text('Идет бой с ' + selectUserId);
+        $('#acceptBattleButton').click(function () {
+            $('#message').text('Идет бой с ' + user2.Name);
+            $('#inviteToBattle').attr('hidden', 'hidden');
 
-            chat.server.acceptAnswer('@User.Identity.Name', selectUserId);
+            chat.server.acceptBattle('@User.Identity.Name', user2.Id);
         });
 
-        $('#renounAnswerButton').click(function () {
+        $('#canselBattleButton').click(function () {
             $('#message').text('Вы отказались от боя!')
+            $('#inviteToBattle').attr('hidden', 'hidden');
 
-            chat.server.renounAnswer('@User.Identity.Name', selectUserId);
+            chat.server.canselBattle('@User.Identity.Name', user2.Id);
         });
 
         $('#canselRequestButton').click(function () {
             $('#message').text('Вы отменили приглашение!');
+            $('#requestToBattle').attr('hidden', 'hidden');
 
             chat.server.canselRequest('@User.Identity.Name', selectUserId);
         });

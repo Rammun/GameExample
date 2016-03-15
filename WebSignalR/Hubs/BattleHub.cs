@@ -48,7 +48,7 @@ namespace WebSignalR.Hubs
             }
         }
 
-        public void InviteUser(string user1Name, string user2Id)
+        public void InviteSelectUser(string user1Name, string user2Id)
         {
             UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
             UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
@@ -62,7 +62,7 @@ namespace WebSignalR.Hubs
             }
         }
 
-        public void AcceptAnswer(string user1Name, string user2Id)
+        public void AcceptInvite(string user1Name, string user2Id)
         {
             UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
             UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
@@ -70,7 +70,7 @@ namespace WebSignalR.Hubs
 
         }
 
-        public void Renouncement(string user1Name, string user2Id)
+        public void CanselInvite(string user1Name, string user2Id)
         {
             UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
             UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
@@ -78,12 +78,29 @@ namespace WebSignalR.Hubs
             user1.Busy = false;
             user2.Busy = false;
 
-            Clients.Client(user2Id).renounAnswer();
+            Clients.Client(user2Id).canselInvite(user1Name);
         }
 
         public void CanselRequest(string user1Name, string user2Id)
         {
+            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
 
+            user1.Busy = false;
+            user2.Busy = false;
+
+            Clients.Client(user2Id).canselRequest(user1Name);
+        }
+
+        public void CanselBattle(string user1Name, string user2Id)
+        {
+            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+
+            user1.Busy = false;
+            user2.Busy = false;
+
+            Clients.Client(user2Id).canselBattle(user1Name);
         }
 
         public override Task OnConnected()
