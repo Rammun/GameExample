@@ -51,7 +51,7 @@ namespace WebSignalR.Hubs
             Clients.Client(user2.Id).addHit(user2.HP, user2.MP, user1.HP, user1.MP);
         }
 
-        public void SetNewParam(UserParam user1, UserParam user2, string hit)
+        private void SetNewParam(UserParam user1, UserParam user2, string hit)
         {
             int[] hits = user1.skills[hit];
             int damage = rnd.Next(hits[0], hits[1]);

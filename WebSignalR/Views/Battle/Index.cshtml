@@ -105,16 +105,20 @@
 
             AddHit(hp1, mp1, hp2, mp2);
         }
+
+        chat.client.battleEnd = function (userId) {
+            $('#message').text('Бой окончен!');
+        }
     }
 
     function loadEvents(chat) {
 
         $('#btHit').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "Hit");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "hit");
         });
 
         $('#btMagic').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "Magic");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "magic");
         });
 
         $('#selectUser').click(function () {
