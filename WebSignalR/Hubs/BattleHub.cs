@@ -34,8 +34,10 @@ namespace WebSignalR.Hubs
 
         public void AddHit(string user1Name, string user2Id, string hit)
         {
-            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
+            UsersBattle battle = battles.FirstOrDefault(b => b.UserParam1.Name == user1Name && b.UserParam2.Id == user2Id);
+
+            UserParam user1 = battle.UserParam1;
+            UserParam user2 = battle.UserParam2;
 
             SetNewParam(user1, user2, hit);
 
@@ -49,7 +51,7 @@ namespace WebSignalR.Hubs
             Clients.Client(user2.Id).addHit(user2.HP, user2.MP, user1.HP, user1.MP);
         }
 
-        private void SetNewParam(UserParam user1, UserParam user2, string hit)
+        public void SetNewParam(UserParam user1, UserParam user2, string hit)
         {
             int[] hits = user1.skills[hit];
             int damage = rnd.Next(hits[0], hits[1]);
@@ -71,7 +73,7 @@ namespace WebSignalR.Hubs
                 user1.Busy = true;
                 user2.Busy = true;
 
-                Clients.Client(user2Id).inviteUser(user1);
+                Clients.Client(user2Id).inviteUser(user1.Id, user1Name);
             }
         }
 
@@ -86,8 +88,8 @@ namespace WebSignalR.Hubs
                 UserParam2 = user2.Clone()
             });
 
-            //Clients.Client(user1.Id).acceptBattle(user2.Name, user1.HP, user1.MP, user2.HP, user2.MP);
-            Clients.Client(user2.Id).acceptBattle(user1Name, user2.HP, user2.MP, user1.HP, user1.MP);
+            Clients.Client(user1.Id).acceptBattle(user2.Name, user1.HP, user1.MP, user2.HP, user2.MP);
+            Clients.Client(user2.Id).acceptBattle(user1.Name, user2.HP, user2.MP, user1.HP, user1.MP);
         }
 
         public void CanselRequest(string user1Name, string user2Id)

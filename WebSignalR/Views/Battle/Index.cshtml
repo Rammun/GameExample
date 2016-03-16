@@ -81,8 +81,10 @@
             $('#' + id).remove();
         }
 
-        chat.client.inviteUser = function (user) {
-            $('#message').text('Вас приглашает на бой ' + user.Name);
+        chat.client.inviteUser = function (userId, userName) {
+            selectUserId = userId;
+
+            $('#message').text('Вас приглашает на бой ' + userName);
             $('#inviteToBattle').removeAttr('hidden');
         }
 
@@ -108,14 +110,15 @@
     function loadEvents(chat) {
 
         $('#btHit').click(function () {
-            chat.server.addHit('@User.Identity.Name', user2.Id, "Hit");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "Hit");
         });
 
         $('#btMagic').click(function () {
-            chat.server.addHit('@User.Identity.Name', user2.Id, "Magic");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "Magic");
         });
 
         $('#selectUser').click(function () {
+            selectUserId = $('#users :selected').val();
             if (selectUserId == '') return;
 
             $('#message').text('Вы пригласили на бой ' + $('#users :selected').text());
@@ -127,14 +130,14 @@
         $('#acceptBattleButton').click(function () {
             $('#inviteToBattle').attr('hidden', 'hidden');
 
-            chat.server.acceptBattle('@User.Identity.Name', user2.Id);
+            chat.server.acceptBattle('@User.Identity.Name', selectUserId);
         });
 
         $('#canselBattleButton').click(function () {
             $('#message').text('Вы отказались от боя!')
             $('#inviteToBattle').attr('hidden', 'hidden');
 
-            chat.server.canselBattle('@User.Identity.Name', user2.Id);
+            chat.server.canselBattle('@User.Identity.Name', selectUserId);
         });
 
         $('#canselRequestButton').click(function () {
