@@ -10,7 +10,9 @@ namespace WebSignalR.Hubs
 {
     public class BattleHub : Hub
     {
-        static List<UserParam> Users = new List<UserParam>();
+        static List<UserParam> users = new List<UserParam>();
+        static List<UsersBattle> battles = new List<UsersBattle>();
+
         static Random rnd = new Random();
 
         // Подключение нового пользователя
@@ -18,22 +20,33 @@ namespace WebSignalR.Hubs
         {
             var connectionId = Context.ConnectionId;
 
-            if (!Users.Any(x => x.Id == connectionId))
+            if (!users.Any(x => x.Id == connectionId))
             {
                 // Посылаем сообщение текущему пользователю
-                Clients.Caller.onConnected(connectionId, userName, Users);
+                Clients.Caller.onConnected(connectionId, userName, users);
 
-                Users.Add(new UserParam { Id = connectionId, Name = userName });
+                users.Add(new UserParam { Id = connectionId, Name = userName });
 
                 // Посылаем сообщение всем пользователям, кроме текущего
                 Clients.AllExcept(connectionId).onNewUserConnected(connectionId, userName);
             }
         }
 
-        public void AddHit(UserParam user1, UserParam user2, string hit)
+        public void AddHit(string user1Name, string user2Id, string hit)
         {
+            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
+
             SetNewParam(user1, user2, hit);
-            Clients.Client(user2.Id).addHit(user2, user1);
+
+            if(user1.HP <= 0 || user2.HP <= 0)
+            {
+                Clients.Client(user1.Id).battleEnd(user2.Id);
+                Clients.Client(user2.Id).battleEnd(user1.Id);
+            }
+
+            Clients.Client(user1.Id).addHit(user1.HP, user1.MP, user2.HP, user2.MP);
+            Clients.Client(user2.Id).addHit(user2.HP, user2.MP, user1.HP, user1.MP);
         }
 
         private void SetNewParam(UserParam user1, UserParam user2, string hit)
@@ -50,41 +63,37 @@ namespace WebSignalR.Hubs
 
         public void InviteSelectUser(string user1Name, string user2Id)
         {
-            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
 
             if(!user1.Busy && !user2.Busy)
             {
-                Clients.Client(user2Id).inviteUser(user1);
-
                 user1.Busy = true;
                 user2.Busy = true;
+
+                Clients.Client(user2Id).inviteUser(user1);
             }
         }
 
-        public void AcceptInvite(string user1Name, string user2Id)
+        public void AcceptBattle(string user1Name, string user2Id)
         {
-            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
 
+            battles.Add(new UsersBattle
+            {
+                UserParam1 = user1.Clone(),
+                UserParam2 = user2.Clone()
+            });
 
-        }
-
-        public void CanselInvite(string user1Name, string user2Id)
-        {
-            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
-
-            user1.Busy = false;
-            user2.Busy = false;
-
-            Clients.Client(user2Id).canselInvite(user1Name);
+            //Clients.Client(user1.Id).acceptBattle(user2.Name, user1.HP, user1.MP, user2.HP, user2.MP);
+            Clients.Client(user2.Id).acceptBattle(user1Name, user2.HP, user2.MP, user1.HP, user1.MP);
         }
 
         public void CanselRequest(string user1Name, string user2Id)
         {
-            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
 
             user1.Busy = false;
             user2.Busy = false;
@@ -94,8 +103,8 @@ namespace WebSignalR.Hubs
 
         public void CanselBattle(string user1Name, string user2Id)
         {
-            UserParam user1 = Users.FirstOrDefault(u => u.Name == user1Name);
-            UserParam user2 = Users.FirstOrDefault(u => u.Id == user2Id);
+            UserParam user1 = users.FirstOrDefault(u => u.Name == user1Name);
+            UserParam user2 = users.FirstOrDefault(u => u.Id == user2Id);
 
             user1.Busy = false;
             user2.Busy = false;
@@ -108,12 +117,12 @@ namespace WebSignalR.Hubs
             var connectionId = Context.ConnectionId;
             var userName = Context.User.Identity.Name;
 
-            if (!Users.Any(x => x.Id == connectionId))
+            if (!users.Any(x => x.Id == connectionId))
             {
                 // Посылаем сообщение текущему пользователю
-                Clients.Caller.onConnected(connectionId, userName, Users);
+                Clients.Caller.onConnected(connectionId, userName, users);
 
-                Users.Add(new UserParam { Id = connectionId, Name = userName });
+                users.Add(new UserParam { Id = connectionId, Name = userName });
 
                 // Посылаем сообщение всем пользователям, кроме текущего
                 Clients.AllExcept(connectionId).onNewUserConnected(connectionId, userName);
@@ -126,7 +135,7 @@ namespace WebSignalR.Hubs
         {
             var id = Context.ConnectionId;
 
-            Users.Remove(Users.FirstOrDefault(u => u.Id == id));
+            users.Remove(users.FirstOrDefault(u => u.Id == id));
             Clients.Caller.onUserDisconnected(id);
 
             return base.OnDisconnected(stopCalled);

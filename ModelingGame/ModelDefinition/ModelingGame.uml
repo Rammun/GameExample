@@ -2736,7 +2736,7 @@
           </message>
           <message
             Id="e76e9a0f-b29b-4081-90f1-5f38acdec73d"
-            name="AcceptAnswer(userName,user1)"
+            name="AcceptButtle(userName,user1)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -2755,7 +2755,7 @@
           </message>
           <message
             Id="48305ff9-94b1-4b71-af28-ee1f92c78c0e"
-            name="Clients.Client(user1).acceptAnswer(user2)"
+            name="Clients.Client(user1).acceptBattle(user2)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -2812,7 +2812,7 @@
           </message>
           <message
             Id="bee68dc0-2a13-4055-95d1-25bbb4f1338c"
-            name="RenounAnswer(userName, user1)"
+            name="CanselBattle(userName, user1)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
@@ -2831,7 +2831,7 @@
           </message>
           <message
             Id="bee4ab60-f950-4db4-9bdd-0f2616bb8bd9"
-            name="Clients.Client(user1).renounAnswer(user2)"
+            name="Clients.Client(user1).canselBattle(user2)"
             messageKind="Complete"
             messageSort="SynchCall"
             createSelfMessage="false">
