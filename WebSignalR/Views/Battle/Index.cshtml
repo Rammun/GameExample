@@ -67,15 +67,10 @@
         };
 
         chat.client.onConnected = function (id, userName, allUsers) {
-            if (allUsers.length == 0) {
-                AddUser('empty', '-пока никого нет-');
+            for (i = 0; i < allUsers.length; i++) {
+                AddUser(allUsers[i].Id, allUsers[i].Name);
             }
-            else {
-                for (i = 0; i < allUsers.length; i++) {
-                    AddUser(allUsers[i].Id, allUsers[i].Name);
-                }
-            }
-            
+            AddEmptyOption();
         }
 
         chat.client.onNewUserConnected = function (id, name) {
@@ -85,12 +80,8 @@
         }
 
         chat.client.onUserDisconnected = function (id) {
-            var i = '#' + id;
-            $(i).remove();
-
-            if ($("select[id='users'] option").size() == 0) {
-                AddUser('empty', '-пока никого нет-');
-            }
+            $('#' + id).remove();
+            AddEmptyOption();
         }
 
         chat.client.inviteUser = function (userId, userName) {
@@ -172,6 +163,12 @@
 
     function AddUser(id, name) {
         var users = $('#users').append('<option value=' + id + ' id="' + id + '">' + name + '</option>');
+    }
+
+    function AddEmptyOption() {
+        if ($("select[id='users'] option").size() == 0) {
+            AddUser('empty', '-пока никого нет-');
+        }
     }
 
     function AddHit(hp1, mp1, hp2, mp2) {
