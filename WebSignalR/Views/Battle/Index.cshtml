@@ -64,7 +64,7 @@
             $('#hp2').text('HP=' + hp2);
             $('#mp1').text('MP=' + mp1);
             $('#mp2').text('MP=' + mp2);
-        };
+        }
 
         chat.client.onConnected = function (id, userName, allUsers) {
             for (i = 0; i < allUsers.length; i++) {
@@ -155,12 +155,6 @@
         });
     }
 
-    @*Кодирование тегов*@
-    function htmlEncode(value) {
-        var encodedValue = $('<div />').text(value).html();
-        return encodedValue;
-    }
-
     function AddUser(id, name) {
         var users = $('#users').append('<option value=' + id + ' id="' + id + '">' + name + '</option>');
     }
@@ -177,10 +171,6 @@
         $('#mp1').text('MP=' + mp1);
         $('#mp2').text('MP=' + mp2);
     }
-
-    $("#users").change(function () {
-        selectUserId = $(this).val();
-    });
 
 </script>
 }
