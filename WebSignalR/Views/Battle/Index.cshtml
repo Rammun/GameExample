@@ -8,9 +8,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <select id="users" size="10">
-            <option value="">пока никого нет</option>
-        </select>
+        <select id="users" size="10"></select>
         <button id="selectUser">Выбрать</button>
     </div>
 
@@ -69,18 +67,30 @@
         };
 
         chat.client.onConnected = function (id, userName, allUsers) {
-            for (i = 0; i < allUsers.length; i++) {
-                AddUser(allUsers[i].Id, allUsers[i].Name);
+            if (allUsers.length == 0) {
+                AddUser('empty', '-пока никого нет-');
             }
+            else {
+                for (i = 0; i < allUsers.length; i++) {
+                    AddUser(allUsers[i].Id, allUsers[i].Name);
+                }
+            }
+            
         }
 
         chat.client.onNewUserConnected = function (id, name) {
+            $('#users option[value="empty"]').remove();
+
             AddUser(id, name);
         }
 
         chat.client.onUserDisconnected = function (id) {
             var i = '#' + id;
             $(i).remove();
+
+            if ($("select[id='users'] option").size() == 0) {
+                AddUser('empty', '-пока никого нет-');
+            }
         }
 
         chat.client.inviteUser = function (userId, userName) {
