@@ -61,6 +61,7 @@
     function loadClientMethods(chat) {
 
         chat.client.addHit = function (hp1, mp1, hp2, mp2) {
+            alert('пришел удар от ' + ' ' + selectUserId);
             $('#hp1').text('HP=' + hp1);
             $('#hp2').text('HP=' + hp2);
             $('#mp1').text('MP=' + mp1);
@@ -78,7 +79,8 @@
         }
 
         chat.client.onUserDisconnected = function (id) {
-            $('#' + id).remove();
+            var i = '#' + id;
+            $(i).remove();
         }
 
         chat.client.inviteUser = function (userId, userName) {
@@ -99,7 +101,7 @@
         }
 
         chat.client.acceptBattle = function (userName, hp1, mp1, hp2, mp2) {
-            $('#message').text('Идет бой с ' + userName);
+            $('#message').text('Идет бой с ' + userName + ' ' + selectUserId);
             $('#requestToBattle').attr('hidden', 'hidden');
             $('#user2').removeAttr('hidden');
 
@@ -114,11 +116,11 @@
     function loadEvents(chat) {
 
         $('#btHit').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "hit");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "hit"); alert('удар по ' + ' ' + selectUserId);
         });
 
         $('#btMagic').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "magic");
+            chat.server.addHit('@User.Identity.Name', selectUserId, "magic"); alert('удар по ' + ' ' + selectUserId);
         });
 
         $('#selectUser').click(function () {

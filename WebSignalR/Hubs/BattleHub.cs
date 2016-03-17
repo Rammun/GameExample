@@ -14,24 +14,7 @@ namespace WebSignalR.Hubs
         static List<UsersBattle> battles = new List<UsersBattle>();
 
         static Random rnd = new Random();
-
-        // Подключение нового пользователя
-        public void Connect(string userName)
-        {
-            var connectionId = Context.ConnectionId;
-
-            if (!users.Any(x => x.Id == connectionId))
-            {
-                // Посылаем сообщение текущему пользователю
-                Clients.Caller.onConnected(connectionId, userName, users);
-
-                users.Add(new UserParam { Id = connectionId, Name = userName });
-
-                // Посылаем сообщение всем пользователям, кроме текущего
-                Clients.AllExcept(connectionId).onNewUserConnected(connectionId, userName);
-            }
-        }
-
+        
         public void AddHit(string user1Name, string user2Id, string hit)
         {
             UsersBattle battle = battles.FirstOrDefault(b => b.UserParam1.Name == user1Name && b.UserParam2.Id == user2Id);
@@ -121,6 +104,13 @@ namespace WebSignalR.Hubs
 
             if (!users.Any(x => x.Id == connectionId))
             {
+                var user = users.FirstOrDefault(u => u.Name == userName);
+                if (user != null)
+                {
+                    users.Remove(user);
+                    Clients.AllExcept(connectionId).onUserDisconnected(user.Id);
+                }
+
                 // Посылаем сообщение текущему пользователю
                 Clients.Caller.onConnected(connectionId, userName, users);
 
@@ -135,10 +125,10 @@ namespace WebSignalR.Hubs
 
         public override Task OnDisconnected(bool stopCalled)
         {
-            var id = Context.ConnectionId;
+            var connectionId = Context.ConnectionId;
 
-            users.Remove(users.FirstOrDefault(u => u.Id == id));
-            Clients.Caller.onUserDisconnected(id);
+            users.Remove(users.FirstOrDefault(u => u.Id == connectionId));
+            Clients.AllExcept(connectionId).onUserDisconnected(connectionId);
 
             return base.OnDisconnected(stopCalled);
         }
