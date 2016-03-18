@@ -19,8 +19,8 @@ namespace WebSignalR.Hubs
         {
             UsersBattle battle = battles.FirstOrDefault(b => b.UserParam1.Name == user1Name && b.UserParam2.Id == user2Id);
 
-            UserParam user1 = battle.UserParam1;
-            UserParam user2 = battle.UserParam2;
+            UserParam user1 = battle.UserParam1.Name == user1Name ? battle.UserParam1 : battle.UserParam2;
+            UserParam user2 = battle.UserParam2.Name == user1Name ? battle.UserParam1 : battle.UserParam2;
 
             SetNewParam(user1, user2, hit);
 

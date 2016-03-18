@@ -24,7 +24,7 @@
         <text id="mp2">MP=</text>
     </div>
 
-    <button id="btHit">Удар</button>
+    <button id="btHit">Меч</button>
     <button id="btMagic">Магия</button>
 </div>
 
@@ -59,11 +59,7 @@
     function loadClientMethods(chat) {
 
         chat.client.addHit = function (hp1, mp1, hp2, mp2) {
-            alert('пришел удар от ' + ' ' + selectUserId);
-            $('#hp1').text('HP=' + hp1);
-            $('#hp2').text('HP=' + hp2);
-            $('#mp1').text('MP=' + mp1);
-            $('#mp2').text('MP=' + mp2);
+            AddHit(hp1, mp1, hp2, mp2);
         }
 
         chat.client.onConnected = function (id, userName, allUsers) {
@@ -117,18 +113,20 @@
     function loadEvents(chat) {
 
         $('#btHit').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "hit"); alert('удар по ' + ' ' + selectUserId);
+            chat.server.addHit('@User.Identity.Name', selectUserId, "hit"); @*alert('@User.Identity.Name ' + selectUserId);*@
         });
 
         $('#btMagic').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "magic"); alert('удар по ' + ' ' + selectUserId);
+            chat.server.addHit('@User.Identity.Name', selectUserId, "magic");
         });
 
         $('#selectUser').click(function () {
-            selectUserId = $('#users :selected').val();
-            if (selectUserId == '') return;
+            var selectUser = $('#users :selected');
 
-            $('#message').text('Вы пригласили на бой ' + $('#users :selected').text());
+            selectUserId = selectUser.val();
+            if (selectUserId == 'empty') return;
+
+            $('#message').text('Вы пригласили на бой ' + selectUser.text());
             $('#requestToBattle').removeAttr('hidden');
 
             chat.server.inviteSelectUser('@User.Identity.Name', selectUserId);
