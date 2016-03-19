@@ -27,14 +27,31 @@ namespace WebSignalR.Hubs
 
             SetNewParam(user1, user2, hit);
 
-            if(user1.HP <= 0 || user2.HP <= 0)
+            string winUserName = string.Empty;
+            if (user1.HP <= 0)
             {
-                Clients.Client(user1.Id).battleEnd(user2.Id);
-                Clients.Client(user2.Id).battleEnd(user1.Id);
+                user1.HP = 0;
+                winUserName = user2.Name;
+            }
+            else if (user2.HP <= 0)
+            {
+                user2.HP = 0;
+                winUserName = user1.Name;
             }
 
             Clients.Client(user1.Id).addHit(user1.HP, user1.MP, user2.HP, user2.MP);
             Clients.Client(user2.Id).addHit(user2.HP, user2.MP, user1.HP, user1.MP);
+
+            if(user1.HP == 0 || user2.HP == 0)
+            {
+                users.Find(u => u.Id == user1.Id).Busy = false;
+                users.Find(u => u.Id == user2.Id).Busy = false;
+
+                battles.Remove(battle);
+
+                Clients.Client(user1.Id).battleEnd(winUserName);
+                Clients.Client(user2.Id).battleEnd(winUserName);
+            }
         }
 
         private void SetNewParam(UserParam user1, UserParam user2, string hit)

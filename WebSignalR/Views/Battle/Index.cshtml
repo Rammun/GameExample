@@ -105,8 +105,8 @@
             AddHit(hp1, mp1, hp2, mp2);
         }
 
-        chat.client.battleEnd = function (userId) {
-            $('#message').text('Бой окончен!');
+        chat.client.battleEnd = function (winUserName) {
+            $('#message').text('Бой окончен! Победил ' + winUserName);
         }
     }
 
