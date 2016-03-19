@@ -17,7 +17,10 @@ namespace WebSignalR.Hubs
         
         public void AddHit(string user1Name, string user2Id, string hit)
         {
-            UsersBattle battle = battles.FirstOrDefault(b => b.UserParam1.Name == user1Name && b.UserParam2.Id == user2Id);
+            UsersBattle battle = battles.FirstOrDefault(b => b.UserParam1.Name == user1Name || b.UserParam2.Name == user1Name);
+
+            if (battle == null)
+                return;
 
             UserParam user1 = battle.UserParam1.Name == user1Name ? battle.UserParam1 : battle.UserParam2;
             UserParam user2 = battle.UserParam2.Name == user1Name ? battle.UserParam1 : battle.UserParam2;
