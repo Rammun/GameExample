@@ -4,39 +4,74 @@
     ViewBag.Title = "Battle";
 }
 
-<p>Выберите противника:</p>
-
 <div class="row">
     <div class="col-md-6">
-        <select id="users" size="10"></select>
-        <button id="selectUser">Выбрать</button>
+        <div id="user1">
+            <p id="name1">@Model.Name</p>
+            <span id="hp1">HP=@Model.HP</span>
+            <span id="mp1">MP=@Model.MP</span>
+
+            <div class="progress">
+                <div id="progressHP1" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100"
+                     aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                    100%
+                </div>
+            </div>
+
+            <div class="progress">
+                <div id="progressMP1" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
+                     aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                    100%
+                </div>
+            </div>
+        </div>        
+
+        <div id="message" class="alert alert-info" role="alert"></div>
     </div>
 
-    <div id="user1">
-        <text id="name1">@Model.Name</text>
-        <text id="hp1">HP=@Model.HP</text>
-        <text id="mp1">MP=@Model.MP</text>
+    <div class="col-md-6">
+        <div id="select">
+            <p>Выберите противника:</p>
+            <select id="users" class="form-control" size="10"></select>
+            <button id="selectUser" class="btn btn-info">Выбрать</button>
+        </div>
+
+        <div id="user2" hidden="hidden">
+            <p id="name2"></p>
+            <span id="hp2"></span>
+            <span id="mp2"></span>
+
+            <div class="progress">
+                <div id="progressHP2" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100"
+                     aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                    100%
+                </div>
+            </div>
+
+            <div class="progress">
+                <div id="progressMP2" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100"
+                     aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                    100%
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="row" id="inviteToBattle" hidden="hidden">
+        <button id="acceptBattleButton" class="btn btn-default">Принять бой</button>
+        <button id="canselBattleButton" class="btn btn-default">Отменить</button>
     </div>
 
-    <div id="user2" hidden="hidden">
-        <text id="name2"></text>
-        <text id="hp2">HP=</text>
-        <text id="mp2">MP=</text>
+    <div class="row" id="requestToBattle" hidden="hidden">
+        <button id="canselRequestButton" class="btn btn-default">Отменить</button>
     </div>
-
-    <button id="btHit">Меч</button>
-    <button id="btMagic">Магия</button>
 </div>
 
-<label id="message"></label>
-
-<div class="row" id="inviteToBattle" hidden="hidden">
-    <button id="acceptBattleButton">Принять бой</button>
-    <button id="canselBattleButton">Отменить</button>
-</div>
-
-<div class="row" id="requestToBattle" hidden="hidden">
-    <button id="canselRequestButton">Отменить</button>
+<div class="row">
+    <div id="skills" class="btn-group" role="group">
+        <button id="btHit" class="btn btn-default">Меч</button>
+        <button id="btMagic" class="btn btn-default">Магия</button>
+    </div>
 </div>
 
 @section scripts{
@@ -44,132 +79,138 @@
     <script src="~/signalr/hubs"></script>
 
     <script>
-    var selectUserId;
+        var selectUserId;
 
-    $(function () {
-        var chat = $.connection.battleHub;
+        $(function () {
+            var chat = $.connection.battleHub;
 
-        loadClientMethods(chat);
+            loadClientMethods(chat);
 
-        $.connection.hub.start().done(function () {
-            loadEvents(chat);
+            $.connection.hub.start().done(function () {
+                loadEvents(chat);
+            });
         });
-    });
 
-    function loadClientMethods(chat) {
+        function loadClientMethods(chat) {
 
-        chat.client.addHit = function (hp1, mp1, hp2, mp2) {
-            AddHit(hp1, mp1, hp2, mp2);
-        }
-
-        chat.client.onConnected = function (id, userName, allUsers) {
-            for (i = 0; i < allUsers.length; i++) {
-                AddUser(allUsers[i].Id, allUsers[i].Name);
+            chat.client.addHit = function (hp1, mp1, hp2, mp2) {
+                AddHit(hp1, mp1, hp2, mp2);
             }
-            AddEmptyOption();
+
+            chat.client.onConnected = function (id, userName, allUsers) {
+                for (i = 0; i < allUsers.length; i++) {
+                    AddUser(allUsers[i].Id, allUsers[i].Name);
+                }
+                AddEmptyOption();
+            }
+
+            chat.client.onNewUserConnected = function (id, name) {
+                $('#users option[value="empty"]').remove();
+
+                AddUser(id, name);
+            }
+
+            chat.client.onUserDisconnected = function (id) {
+                $('#' + id).remove();
+                AddEmptyOption();
+            }
+
+            chat.client.inviteUser = function (userId, userName) {
+                selectUserId = userId;
+
+                $('#message').text('Вас приглашает на бой ' + userName);
+                $('#inviteToBattle').removeAttr('hidden');
+            }
+
+            chat.client.canselRequest = function (userName) {
+                $('#message').text(userName + ' отменил приглашение');
+                $('#inviteToBattle').attr('hidden', 'hidden');
+            }
+
+            chat.client.canselBattle = function (userName) {
+                $('#message').text(userName + ' отменил приглашение');
+                $('#requestToBattle').attr('hidden', 'hidden');
+            }
+
+            chat.client.acceptBattle = function (userName, hp1, mp1, hp2, mp2) {
+                $('#message').text('Идет бой с ' + userName);
+                $('#requestToBattle').attr('hidden', 'hidden');
+
+                $('#name2').text(userName);
+                $('#select').attr('hidden', 'hidden');
+
+                $('#user2').removeAttr('hidden');
+
+                AddHit(hp1, mp1, hp2, mp2);
+            }
+
+            chat.client.battleEnd = function (winUserName) {
+                $('#message').text('Бой окончен! Победил ' + winUserName);
+                $('#user2').attr('hidden', 'hidden');
+                $('#select').removeAttr('hidden');
+            }
         }
 
-        chat.client.onNewUserConnected = function (id, name) {
-            $('#users option[value="empty"]').remove();
+        function loadEvents(chat) {
 
-            AddUser(id, name);
+            $('#btHit').click(function () {
+                chat.server.addHit('@User.Identity.Name', selectUserId, "hit");
+            });
+
+            $('#btMagic').click(function () {
+                chat.server.addHit('@User.Identity.Name', selectUserId, "magic");
+            });
+
+            $('#selectUser').click(function () {
+                var selectUser = $('#users :selected');
+
+                selectUserId = selectUser.val();
+                if (selectUserId == 'empty') return;
+
+                $('#message').text('Вы пригласили на бой ' + selectUser.text());
+                $('#requestToBattle').removeAttr('hidden');
+
+                chat.server.inviteSelectUser('@User.Identity.Name', selectUserId);
+            });
+
+            $('#acceptBattleButton').click(function () {
+                $('#inviteToBattle').attr('hidden', 'hidden');
+
+                chat.server.acceptBattle('@User.Identity.Name', selectUserId);
+            });
+
+            $('#canselBattleButton').click(function () {
+                $('#message').text('Вы отказались от боя!')
+                $('#inviteToBattle').attr('hidden', 'hidden');
+
+                chat.server.canselBattle('@User.Identity.Name', selectUserId);
+            });
+
+            $('#canselRequestButton').click(function () {
+                $('#message').text('Вы отменили приглашение!');
+                $('#requestToBattle').attr('hidden', 'hidden');
+
+                chat.server.canselRequest('@User.Identity.Name', selectUserId);
+            });
         }
 
-        chat.client.onUserDisconnected = function (id) {
-            $('#' + id).remove();
-            AddEmptyOption();
+        function AddUser(id, name) {
+            var users = $('#users').append('<option value=' + id + ' id="' + id + '">' + name + '</option>');
         }
 
-        chat.client.inviteUser = function (userId, userName) {
-            selectUserId = userId;
-
-            $('#message').text('Вас приглашает на бой ' + userName);
-            $('#inviteToBattle').removeAttr('hidden');
+        function AddEmptyOption() {
+            if ($("select[id='users'] option").size() == 0) {
+                AddUser('empty', '-пока никого нет-');
+            }
         }
 
-        chat.client.canselRequest = function (userName) {
-            $('#message').text(userName + ' отменил приглашение');
-            $('#inviteToBattle').attr('hidden', 'hidden');
+        function AddHit(hp1, mp1, hp2, mp2) {
+            $('#hp1').text('HP=' + hp1);
+            $('#hp2').text('HP=' + hp2);
+            $('#mp1').text('MP=' + mp1);
+            $('#mp2').text('MP=' + mp2);
         }
 
-        chat.client.canselBattle = function (userName) {
-            $('#message').text(userName + ' отменил приглашение');
-            $('#requestToBattle').attr('hidden', 'hidden');
-        }
-
-        chat.client.acceptBattle = function (userName, hp1, mp1, hp2, mp2) {
-            $('#message').text('Идет бой с ' + userName + ' ' + selectUserId);
-            $('#requestToBattle').attr('hidden', 'hidden');
-            $('#user2').removeAttr('hidden');
-
-            AddHit(hp1, mp1, hp2, mp2);
-        }
-
-        chat.client.battleEnd = function (winUserName) {
-            $('#message').text('Бой окончен! Победил ' + winUserName);
-        }
-    }
-
-    function loadEvents(chat) {
-
-        $('#btHit').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "hit"); @*alert('@User.Identity.Name ' + selectUserId);*@
-        });
-
-        $('#btMagic').click(function () {
-            chat.server.addHit('@User.Identity.Name', selectUserId, "magic");
-        });
-
-        $('#selectUser').click(function () {
-            var selectUser = $('#users :selected');
-
-            selectUserId = selectUser.val();
-            if (selectUserId == 'empty') return;
-
-            $('#message').text('Вы пригласили на бой ' + selectUser.text());
-            $('#requestToBattle').removeAttr('hidden');
-
-            chat.server.inviteSelectUser('@User.Identity.Name', selectUserId);
-        });
-
-        $('#acceptBattleButton').click(function () {
-            $('#inviteToBattle').attr('hidden', 'hidden');
-
-            chat.server.acceptBattle('@User.Identity.Name', selectUserId);
-        });
-
-        $('#canselBattleButton').click(function () {
-            $('#message').text('Вы отказались от боя!')
-            $('#inviteToBattle').attr('hidden', 'hidden');
-
-            chat.server.canselBattle('@User.Identity.Name', selectUserId);
-        });
-
-        $('#canselRequestButton').click(function () {
-            $('#message').text('Вы отменили приглашение!');
-            $('#requestToBattle').attr('hidden', 'hidden');
-
-            chat.server.canselRequest('@User.Identity.Name', selectUserId);
-        });
-    }
-
-    function AddUser(id, name) {
-        var users = $('#users').append('<option value=' + id + ' id="' + id + '">' + name + '</option>');
-    }
-
-    function AddEmptyOption() {
-        if ($("select[id='users'] option").size() == 0) {
-            AddUser('empty', '-пока никого нет-');
-        }
-    }
-
-    function AddHit(hp1, mp1, hp2, mp2) {
-        $('#hp1').text('HP=' + hp1);
-        $('#hp2').text('HP=' + hp2);
-        $('#mp1').text('MP=' + mp1);
-        $('#mp2').text('MP=' + mp2);
-    }
-
-</script>
+    </script>
 }
 

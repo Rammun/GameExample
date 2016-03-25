@@ -132,7 +132,7 @@ namespace WebSignalR.Hubs
                 }
 
                 // Посылаем сообщение текущему пользователю
-                Clients.Caller.onConnected(connectionId, userName, users);
+                Clients.Caller.onConnected(connectionId, userName, users.Select(u => new { u.Id, u.Name }));
 
                 users.Add(new UserParam { Id = connectionId, Name = userName });
 
