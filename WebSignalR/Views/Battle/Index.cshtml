@@ -205,14 +205,22 @@
         }
 
         function AddHit(hp1, mp1, hp2, mp2) {
+            var temp;
             $('#hp1').text('HP=' + hp1);
-            $('#progressHP1').attr('style', 'width: ' + Math.round(hp1 / 10) + '%');
+            ShowProgressBar($('#progressHP1'), Math.round(hp1 / 10));
+
             $('#hp2').text('HP=' + hp2);
-            $('#progressHP2').attr('style', 'width: ' + Math.round(hp2 / 10) + '%');
+            ShowProgressBar($('#progressHP2'), Math.round(hp2 / 10));
+
             $('#mp1').text('MP=' + mp1);
-            $('#progressMP1').attr('style', 'width: ' + Math.round(mp1 / 20) + '%');
+            ShowProgressBar($('#progressMP1'), Math.round(mp1 / 20));
+
             $('#mp2').text('MP=' + mp2);
-            $('#progressMP2').attr('style', 'width: ' + Math.round(mp2 / 20) + '%');
+            ShowProgressBar($('#progressMP2'), Math.round(mp2 / 20));
+        }
+
+        function ShowProgressBar(progressbar, param) {
+            progressbar.attr('style', 'width: ' + param + '%').text(param + '%');
         }
 
     </script>
