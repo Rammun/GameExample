@@ -26,10 +26,12 @@
             </div>
         </div>        
 
-        <div id="message" class="alert alert-info" role="alert"></div>
+        
     </div>
 
     <div class="col-md-6">
+        <div id="message" class="alert alert-info" role="alert"></div>
+
         <div id="select">
             <p>Выберите противника:</p>
             <select id="users" class="form-control" size="10"></select>
@@ -120,15 +122,18 @@
 
                 $('#message').text('Вас приглашает на бой ' + userName);
                 $('#inviteToBattle').removeAttr('hidden');
+                $('#select').attr('hidden', 'hidden');
             }
 
             chat.client.canselRequest = function (userName) {
                 $('#message').text(userName + ' отменил приглашение');
+                $('#select').removeAttr('hidden');
                 $('#inviteToBattle').attr('hidden', 'hidden');
             }
 
             chat.client.canselBattle = function (userName) {
                 $('#message').text(userName + ' отменил приглашение');
+                $('#select').removeAttr('hidden');
                 $('#requestToBattle').attr('hidden', 'hidden');
             }
 
@@ -170,6 +175,8 @@
                 $('#message').text('Вы пригласили на бой ' + selectUser.text());
                 $('#requestToBattle').removeAttr('hidden');
 
+                $('#select').attr('hidden', 'hidden');
+
                 chat.server.inviteSelectUser('@User.Identity.Name', selectUserId);
             });
 
@@ -182,6 +189,7 @@
             $('#canselBattleButton').click(function () {
                 $('#message').text('Вы отказались от боя!')
                 $('#inviteToBattle').attr('hidden', 'hidden');
+                $('#select').removeAttr('hidden');
 
                 chat.server.canselBattle('@User.Identity.Name', selectUserId);
             });
@@ -189,6 +197,7 @@
             $('#canselRequestButton').click(function () {
                 $('#message').text('Вы отменили приглашение!');
                 $('#requestToBattle').attr('hidden', 'hidden');
+                $('#select').removeAttr('hidden');
 
                 chat.server.canselRequest('@User.Identity.Name', selectUserId);
             });
